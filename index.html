@@ -146,6 +146,106 @@
       transform: translateX(-50%) translateY(0);
       pointer-events: auto;
     }
+    :root {
+      --unchecked-color: #A29BA4;
+      --checked-color: #fc6453c7;
+      --checked-shadow: #fc645321;
+    }
+
+    .switch-container {
+      position: relative;
+      width: 54px;
+      margin: 0 ;
+      height: 24px;
+    }
+
+    .switch-checkbox {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      z-index: 100;
+      cursor: pointer;
+    }
+
+    .switch-label {
+      height: 24px;
+      width: 54px;
+      background-color: white;
+      border-radius: 100px;
+      display: block;
+      box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.2),
+        inset 0 0 5px -2px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .switch-bulb-icon {
+      height: 12px;
+      width: 12px;
+      background-color: var(--unchecked-color);
+      border-radius: 50%;
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      display: block;
+      transition: 0.7s;
+      box-shadow:
+        inset 0 0 1px 3px var(--unchecked-color),
+        inset 0 0 6px 8px var(--unchecked-color),
+        0 20px 30px -10px rgba(0, 0, 0, 0.4);
+    }
+
+    .switch-bulb-center {
+      position: absolute;
+      display: block;
+      height: 16px;
+      width: 16px;
+      background-color: var(--unchecked-color);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transition: 0.7s;
+      transform: translate(-50%, -50%);
+      box-shadow: inset 0 0 0 4px var(--unchecked-color);
+    }
+    .switch-bulb-center:after {
+      content: "";
+      display: block;
+      height: 14px;
+      width: 14px;
+      background-color: var(--unchecked-color);
+      border-radius: 50%;
+      position: absolute;
+      transition: 0.7s;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 2px 4px var(--unchecked-color);
+    }
+
+    /* Checked State */
+    .switch-checkbox:checked ~ .switch-label .switch-bulb-icon {
+      left: 35px;
+      background-color: var(--checked-color);
+      box-shadow:
+        inset 0 0 1px 3px #fc6453a1,
+        inset 0 0 6px 8px #fc64538f,
+        0 20px 30px -10px #fc645363,
+        0 0 30px 50px var(--checked-shadow);
+    }
+    .switch-checkbox:checked ~ .switch-label .switch-bulb-icon > .switch-bulb-center {
+      background-color: #fc6453a1;
+      box-shadow: inset 0 0 0 4px #fc645324, 0 0 12px 10px #fc645378, 0 0 20px 14px #f6bfb94a;
+    }
+    .switch-checkbox:checked ~ .switch-label .switch-bulb-icon > .switch-bulb-center:after {
+      background-color: #fc64532b;
+      box-shadow: 0 0 2px 4px #fd774399;
+    }
+
 
 
     @media screen and (max-width: 768px) {
@@ -155,6 +255,11 @@
       .right-column {
         border-left: none;
         padding-left: 0;
+      }
+      .switch-container{
+          position: fixed;
+                  top: 20px;
+                  right: 20px;
       }
     }
   </style>
@@ -290,6 +395,14 @@
 
     <!-- RIGHT COLUMN -->
     <div class="right-column">
+        <div class="switch-container">
+          <input type="checkbox" id="switchInput" class="switch-checkbox" />
+          <label for="switchInput" class="switch-label">
+            <span class="switch-bulb-icon">
+              <span class="switch-bulb-center"></span>
+            </span>
+          </label>
+        </div>
       <section class="section">
         <h1>Karl-Milann <br><span class="highlight">LOBIR</span></h1>
         <p>📍 18 Rua das Flores, Lisboa</p>
@@ -302,6 +415,8 @@
              </span>
         </p>
       </section>
+
+
 
       <section class="section">
         <h2>Educational Background</h2>
@@ -364,6 +479,32 @@
       }, 2000);
     }
   </script>
+  <script>
+    const switchInput = document.getElementById('switchInput');
 
+    function updateTheme() {
+      const codes = document.querySelectorAll('code');
+      if (switchInput.checked) {
+        document.body.style.background = '#fff';
+        document.body.style.color = '#222';
+        codes.forEach(code => {
+               code.style.background = '#eaeaea'; // light code background
+               code.style.color = '#222';
+             });
+      } else {
+        document.body.style.background = '#222';
+        document.body.style.color = '#fff';
+        codes.forEach(code => {
+               code.style.background = '#333';
+               code.style.color = '#e0e0e0';
+             });
+      }
+    }
+
+    switchInput.addEventListener('change', updateTheme);
+
+    // Initialize on page load
+    updateTheme();
+  </script>
 </body>
 </html>
