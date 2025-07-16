@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Karl-Milann LOBIR - CV</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      container: container;
+    }
+
+
+    h1, h2, h3 {
+      color: #00aaff;
+    }
+
+    a {
+      color: #00aaff;
+      text-decoration: none;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+
+    .right-column {
+      border-left: 1px solid #444;
+      padding-left: 2rem;
+    }
+
+    .skills, .interests, .languages, ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .skills li, .interests li, .languages li {
+      margin-bottom: 0.5rem;
+    }
+
+    code {
+      background-color: #333;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .job{
+        padding-top: 2px;
+        border-top: 1px solid white
+    }
+
+    .job ul li:not(:last-child) {
+      margin-bottom: 4px;
+
+    }
+
+    .job ul li p {
+      color: rgb(173, 173, 173);
+
+    }
+    .job-title {
+      font-weight: bold;
+      margin-top: 4px;
+    }
+
+
+    .job-subtitle {
+      font-style: italic;
+    }
+
+    .highlight {
+      color: #00aaff;
+      font-weight: bold;
+    }
+     table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      text-align: left;
+      color: #00aaff;
+      font-size: 1.1rem;
+      padding-bottom: 0.5rem;
+    }
+
+    td {
+      vertical-align: top;
+      padding: 0.25rem 0;
+    }
+
+    td i {
+      margin-right: 8px;
+      color: #00aaff;
+    }
+    #saveAsPdfButton{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        background-color: #00aaff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    @media screen and (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      .right-column {
+        border-left: none;
+        padding-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- LEFT COLUMN -->
+    <div class="left-column">
+      <section class="section">
+        <h2>Known Computer Languages</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Frontend</th>
+              <th>Backend</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>HTML</td>
+              <td>PHP</td>
+              <td>GIT</td>
+            </tr>
+            <tr>
+              <td>CSS | LESS | SCSS</td>
+              <td>Python</td>
+              <td>SVN</td>
+            </tr>
+            <tr>
+              <td>Javascript | TypeScript</td>
+              <td>JavaEE | Spring | SpringBoot | Struts</td>
+            </tr>
+            <tr>
+              <td>Angular 5–9</td>
+              <td>dotNet</td>
+            </tr>
+            <tr>
+              <td>JAVA Android</td>
+              <td>Go (Beginner)</td>
+            </tr>
+            <tr>
+              <td>React JS - 16-18</td>
+              <td>C#</td>
+            </tr>
+            <tr>
+              <td>Remix</td>
+              <td></td>
+
+            </tr>
+            <tr>
+              <td>NextJS</td>
+              <td></td>
+
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <h2>Professional Experiences</h2>
+        <div class="job">
+                  <div class="job-title">Luminous | AI coaching platform | May 2024 – Now</div>
+                  <ul>
+                    <li><strong>luminous.coach</strong> | Fullstack development and CICD management of the platform
+                      <br><span class="job-subtitle"><code>React 16</code>, <code>nodeJS (Strapi)</code>, <code>Remix</code>, <code>python (Django)</code>, <code>langraph</code>, <code>LLM</code>, <code>prompting</code>, <code>MySQL</code>,<code>Digital Ocean</code></span>
+                      <br><p>Maintenance and development of the entire stack of the Luminous SaaS. Actively participated in every decision-making process, providing technical advice and strategic input. Conducted extensive teaching and knowledge-sharing sessions with non-technical collaborators to bridge the gap and ensure smooth collaboration, as the sole technical team member.</p>
+                    </li>
+                  </ul>
+                </div>
+
+        <div class="job">
+          <div class="job-title">Uncut | Web 3 art platfrom | 2023 – May 2024</div>
+          <ul>
+            <li><strong>uncut.network</strong> | Frontend development of the platform
+              <br><span class="job-subtitle"><code>NextJS</code>, <code>graphQL</code>, <code>LESS</code>, <code>UI/UX quality</code></span>
+              <br><p>Maintenance and develpoment of new features such as a complete refont of a personnalized profile page, a social Media (Twitter like with platform content linked posts), a daily curation system by specific power users on the platform, a reward and gamification system, an exploring section focused on digital art displaying. Worked closely with the designer to ensure a perfect UI/UX quality across all features.</p>
+            </li>
+
+          </ul>
+        </div>
+        <div class="job">
+          <div class="job-title">Mainsysgroup | Banking Software | 2020 – 2022</div>
+          <ul>
+            <li><strong>CFCAL (client)</strong> | Api + Data flow management for Pumpkin
+              <br><span class="job-subtitle">with Apigee, Nifi, Kibana | <code>Xml</code>, <code>Json</code>, <code>Native JS</code>, <code>Python</code></span>
+              <br><p>Those tools were used to gather all the data flow to one secured place and manipulate then convert the data from SOAP to REST (or the opposite) to send it to other APIs if needed.</p>
+            </li>
+            <li><strong>CFCAL</strong> | Website and desktop app maintenance and new features + SOAP Webservices |
+              <br><span class="job-subtitle"><code>vb.Net</code>, <code>jQuery</code>, <code>Html</code>, <code>Xml</code>, <code>TSQL</code></span>
+              <br><p>Broker website and local app for loan creation and follow-up.
+              Team management and day-to-day client follow-up.</p>
+            </li>
+            <li><strong>CFCAL</strong> | Digital Signing Web Platform for loan validation
+              <br><span class="job-subtitle"><code>C#</code>, <code>Xsp</code>, <code>TSQL</code></span>
+              <br><p>The platform was linked to the previous project. Agile project + Team management.</p>
+            </li>
+            <li><strong>Mainsysgroup</strong> | Fullstack development of a specific product
+              <br><span class="job-subtitle"><code>Jsp</code>, <code>Java 12</code>, <code>PLSQL</code></span>
+              <br><p>Modular website maintenance & development for multiple clients.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <p><strong>Website mission for association « Les Croisades D’Unnord » | 2020</strong><br>
+          Frontend + Backend in <code>Angular 9</code>, <code>JEE(Springboot)</code></p>
+
+
+        </div>
+        <div class="job">
+            <div class="job-title">HEI | 5th year project | 2019</div>
+        <p>
+          Info web app (Wikipedia-like) in Agile from specs to prod.
+          <code>Angular 7</code>, <code>Java Springboot</code></p></div>
+
+          <div class="job">
+              <div class="job-title">Website mission for auto-entrepreneurs | 2019</div>
+          <p>
+          Design, dev, maintenance in <code>Angular 7</code>, <code>Firebase hosting (serverless)</code></p></div>
+
+          <div class="job">
+              <div class="job-title">HEI Micro Association | President | 2015–2016</div>
+          <p>
+          Customer service, tech repair, team management.</p></div>
+
+          <div class="job">
+              <div class="job-title">Vallourec and Mannesman | IT Security Internship | 2014</div>
+          <p>
+          Web-based ticket system for security dept + hardware/SAP ERP integration mini-project.</p>
+      </section>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-column">
+      <section class="section">
+        <h1>Karl-Milann <br><span class="highlight">LOBIR</span></h1>
+        <p>📍 18 Rua das Flores, Lisboa</p>
+        <p>📞 +336 95 84 86 07</p>
+        <p>✉️ <a href="mailto:karl-milann-henri.lobir@protonmail.com">karl-milann-henri.lobir@protonmail.com</a></p>
+      </section>
+
+      <section class="section">
+        <h2>Educational Background</h2>
+        <p><strong>Last year of study | 2018 – 2019</strong><br>
+        HEI, General Engineering with specialisation in computer science and information technology.</p>
+      </section>
+
+      <section class="section">
+        <h2>Interests</h2>
+        <ul class="interests">
+          <li><strong>Sports:</strong></li>
+          <li>Aikido (10 years, incl. French-speaking events)</li>
+          <li>Penchak-Silat (3 years)</li>
+          <li>Running (leisure)</li>
+          <li><strong>Other:</strong></li>
+          <li>Fantasy & detective literature</li>
+          <li>Series</li>
+          <li>Video games</li>
+          <li>Quantum Computing</li>
+          <li><strong>Travel:</strong> Canada, USA, Ivory Coast, Guadeloupe</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Languages</h2>
+        <ul class="languages">
+          <li>English: Level B2 (FCE Cambridge)</li>
+          <li>Spanish: Read, written</li>
+          <li>Chinese: basics</li>
+          <li>Portuguese: basics</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <button id="saveAsPdfButton" style="padding: 10px 20px; background-color: #00aaff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    Print | Save as PDF
+  </button>
+
+  <script>
+    document.getElementById('saveAsPdfButton').addEventListener('click', function () {
+      window.print(); // Opens the browser's print dialog
+    });
+  </script>
+</body>
+</html>
