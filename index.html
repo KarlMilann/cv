@@ -249,9 +249,18 @@
       box-shadow: 0 0 2px 4px #fd774399;
     }
 
+    .mobile-header{
+        display: none;
+    }
 
 
     @media screen and (max-width: 768px) {
+        .mobile-header{
+          display: block;
+        }
+        .desktop-header{
+         display: none;
+        }
       .container {
         grid-template-columns: 1fr;
       }
@@ -272,6 +281,18 @@
   <div class="container">
     <!-- LEFT COLUMN -->
     <div class="left-column">
+        <section class="section mobile-header">
+          <h1>Karl-Milann <br><span class="highlight">LOBIR</span></h1>
+          <p>📍 18 Rua das Flores, Lisboa</p>
+          <p>📞 +336 95 84 86 07</p>
+          <p>✉️ <a href="mailto:karl-milann-henri.lobir@protonmail.com" id="emailLink">karl-milann-henri.lobir@protonmail.com</a>
+              <span id="copyEmailButton" style="cursor:pointer; vertical-align:middle; margin-left:8px;">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="#00aaff" viewBox="0 0 24 24">
+                   <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h11v16z"/>
+                 </svg>
+               </span>
+          </p>
+        </section>
       <section class="section">
         <h2>Known Computer Languages</h2>
         <table>
@@ -406,7 +427,7 @@
             </span>
           </label>
         </div>
-      <section class="section">
+      <section class="section desktop-header">
         <h1>Karl-Milann <br><span class="highlight">LOBIR</span></h1>
         <p>📍 18 Rua das Flores, Lisboa</p>
         <p>📞 +336 95 84 86 07</p>
