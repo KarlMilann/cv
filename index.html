@@ -118,6 +118,36 @@
         border-radius: 5px;
         cursor: pointer;
     }
+    #copyEmailButton svg:hover {
+      fill: #ffaa00;
+      transition: fill 0.2s;
+    }
+    #toast {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-40px);
+      min-width: 120px;
+      background: #4241414a;
+          backdrop-filter: blur(8px);
+          color: #fff;
+      text-align: center;
+      border-radius: 8px;
+
+      padding: 10px 20px;
+      font-size: 1rem;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 9999;
+      transition: opacity 0.4s, transform 0.4s;
+    }
+    #toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+
+
     @media screen and (max-width: 768px) {
       .container {
         grid-template-columns: 1fr;
@@ -264,7 +294,13 @@
         <h1>Karl-Milann <br><span class="highlight">LOBIR</span></h1>
         <p>📍 18 Rua das Flores, Lisboa</p>
         <p>📞 +336 95 84 86 07</p>
-        <p>✉️ <a href="mailto:karl-milann-henri.lobir@protonmail.com">karl-milann-henri.lobir@protonmail.com</a></p>
+        <p>✉️ <a href="mailto:karl-milann-henri.lobir@protonmail.com" id="emailLink">karl-milann-henri.lobir@protonmail.com</a>
+            <span id="copyEmailButton" style="cursor:pointer; vertical-align:middle; margin-left:8px;">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="#00aaff" viewBox="0 0 24 24">
+                 <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h11v16z"/>
+               </svg>
+             </span>
+        </p>
       </section>
 
       <section class="section">
@@ -303,11 +339,31 @@
   <button id="saveAsPdfButton" style="padding: 10px 20px; background-color: #00aaff; color: white; border: none; border-radius: 5px; cursor: pointer;">
     Print | Save as PDF
   </button>
-
+  <div id="toast" >
+    Copied!
+  </div>
   <script>
     document.getElementById('saveAsPdfButton').addEventListener('click', function () {
       window.print(); // Opens the browser's print dialog
     });
   </script>
+  <script>
+    document.getElementById('copyEmailButton').addEventListener('click', function () {
+      const email = document.getElementById('emailLink').textContent;
+      navigator.clipboard.writeText(email).then(function () {
+        showToast('Email copied!');
+      });
+    });
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2000);
+    }
+  </script>
+
 </body>
 </html>
