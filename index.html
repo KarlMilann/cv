@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Karl-Milann LOBIR - CV. Fullstack developer, AI, Web3, and more"/>
   <title>Karl-Milann LOBIR - CV</title>
 
   <style>
@@ -457,11 +460,13 @@
   <div id="toast" >
     Copied!
   </div>
+  <!-- print or dl as pdf -->
   <script>
     document.getElementById('saveAsPdfButton').addEventListener('click', function () {
       window.print(); // Opens the browser's print dialog
     });
   </script>
+  <!-- copy email -->
   <script>
     document.getElementById('copyEmailButton').addEventListener('click', function () {
       const email = document.getElementById('emailLink').textContent;
@@ -479,6 +484,7 @@
       }, 2000);
     }
   </script>
+  <!-- theme management -->
   <script>
     const switchInput = document.getElementById('switchInput');
 
