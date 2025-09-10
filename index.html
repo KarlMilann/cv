@@ -1,890 +1,972 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="description" content="Karl-Milann LOBIR - CV. Fullstack developer, AI, Web3, and more"/>
-  <title>Karl-Milann LOBIR - CV</title>
+    <title>Karl-Milann LOBIR - CV</title>
     <script src="https://cdn.jsdelivr.net/npm/sass.js@0.11.1/dist/sass.min.js"></script>
-  <style >
-      :root {
-          --unchecked-color: #A29BA4;
-          --checked-color: #fc6453c7;
-          --checked-shadow: #fc645321;
-          --accent-color: #29a1ce;
-          --global--size: clamp(2rem, 4vw, 5rem);
-          --anim--hover-time: 400ms;
-          --anim--hover-ease: cubic-bezier(0.25, 1, 0.5, 1);
-          --border-width: clamp(1px, 0.0625em, 4px);
+    <style>
+        :root {
+            --unchecked-color: #A29BA4;
+            --checked-color: #fc6453c7;
+            --checked-shadow: #fc645321;
+            --accent-color: #29a1ce;
+            --global--size: clamp(2rem, 4vw, 5rem);
+            --anim--hover-time: 400ms;
+            --anim--hover-ease: cubic-bezier(0.25, 1, 0.5, 1);
+            --border-width: clamp(1px, 0.0625em, 4px);
 
-      }
-      @property --angle-1 {
-          syntax: "<angle>";
-          inherits: false;
-          initial-value: -75deg;
-      }
+        }
 
-      @property --angle-2 {
-          syntax: "<angle>";
-          inherits: false;
-          initial-value: -45deg;
-      }
+        @property --angle-1 {
+            syntax: "<angle>";
+            inherits: false;
+            initial-value: -75deg;
+        }
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: radial-gradient(circle, rgb(15, 32, 39), rgb(27 49 56), rgb(18 34 40));
-      /*background-color: #1e1e1e;*/
-      color: #e0e0e0;
+        @property --angle-2 {
+            syntax: "<angle>";
+            inherits: false;
+            initial-value: -45deg;
+        }
 
-    }
-    .light{
-        background: #fff;
-        color: #222;
-        code{
-            background: #eaeaea; /* light code background */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle, rgb(15, 32, 39), rgb(27 49 56), rgb(18 34 40));
+            /*background-color: #1e1e1e;*/
+            color: #e0e0e0;
+
+        }
+
+        .light {
+            background: #fff;
+            color: #222;
+
+            code {
+                background: #eaeaea; /* light code background */
+                color: #222;
+            }
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+            container: container;
+        }
+
+        h1, h2, h3 {
+            color: var(--accent-color);
+        }
+
+        h1, h2 {
+            margin-top: 0;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+            background: #00000033;
+            padding: 16px;
+            backdrop-filter: blur(12px);
+            border-radius: 8px;
+
+            box-shadow: 20px 20px 60px #0f1d22,
+            -20px -20px 60px #15272e;
+
+        }
+
+        .light .section {
+            background: #ffffff33;
+            box-shadow: 20px 20px 60px #d9d9d9,
+            -20px -20px 60px #ffffff;
+        }
+
+
+        .right-column {
+            /*border-left: 1px solid #444;*/
+            padding-left: 2rem;
+        }
+
+        .skills, .interests, .languages, ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skills li, .interests li, .languages li {
+            margin-bottom: 0.5rem;
+        }
+
+        code {
+            background-color: #333;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .job {
+            padding-top: 2px;
+            border-top: 1px solid white
+        }
+
+        .job ul li:not(:last-child) {
+            margin-bottom: 4px;
+
+        }
+
+        .job ul li p {
+            color: rgb(173, 173, 173);
+
+        }
+
+        .job-title {
+            font-weight: bold;
+            margin-top: 4px;
+        }
+
+
+        .job-subtitle {
+            font-style: italic;
+        }
+
+        .highlight {
+            color: white;
+            font-weight: bold;
+        }
+
+        .light .highlight {
             color: #222;
         }
-    }
 
-    .container {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 2rem;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-      container: container;
-    }
-
-    h1, h2, h3 {
-      color: var(--accent-color);
-    }
-    h1, h2{
-        margin-top: 0;
-    }
-    a {
-      color: var(--accent-color);
-      text-decoration: none;
-    }
-
-    .section {
-      margin-bottom: 2rem;
-        background: #00000033;
-        padding: 16px;
-        backdrop-filter: blur(12px);
-        border-radius: 8px;
-
-        box-shadow:  20px 20px 60px #0f1d22,
-        -20px -20px 60px #15272e;
-
-    }
-    .light .section{
-        background: #ffffff33;
-        box-shadow:  20px 20px 60px #d9d9d9,
-        -20px -20px 60px #ffffff;
-    }
-
-
-    .right-column {
-      /*border-left: 1px solid #444;*/
-      padding-left: 2rem;
-    }
-
-    .skills, .interests, .languages, ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .skills li, .interests li, .languages li {
-      margin-bottom: 0.5rem;
-    }
-
-    code {
-      background-color: #333;
-      padding: 2px 6px;
-      border-radius: 4px;
-    }
-    .job{
-        padding-top: 2px;
-        border-top: 1px solid white
-    }
-
-    .job ul li:not(:last-child) {
-      margin-bottom: 4px;
-
-    }
-
-    .job ul li p {
-      color: rgb(173, 173, 173);
-
-    }
-    .job-title {
-      font-weight: bold;
-      margin-top: 4px;
-    }
-
-
-    .job-subtitle {
-      font-style: italic;
-    }
-
-    .highlight {
-      color: white;
-      font-weight: bold;
-    }
-     table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    th {
-      text-align: left;
-      color: var(--accent-color);
-      font-size: 1.1rem;
-      padding-bottom: 0.5rem;
-    }
-
-    td {
-      vertical-align: top;
-      padding: 0.25rem 0;
-    }
-
-    td i {
-      margin-right: 8px;
-      color: var(--accent-color);
-    }
-      /* ========== BUTTON ========== */
-      /* Button Wrap Container */
-
-      .button-wrap {
-          position: relative;
-          z-index: 2;
-          border-radius: 999vw;
-          background: transparent;
-          pointer-events: none;
-          transition: all var(--anim--hover-time) var(--anim--hover-ease);
-      }
-      /* Button Shadow Container */
-
-      .button-shadow {
-          --shadow-cuttoff-fix: 2em;
-          position: absolute;
-          width: calc(100% + var(--shadow-cuttoff-fix));
-          height: calc(100% + var(--shadow-cuttoff-fix));
-          top: calc(0% - var(--shadow-cuttoff-fix) / 2);
-          left: calc(0% - var(--shadow-cuttoff-fix) / 2);
-          filter: blur(clamp(2px, 0.125em, 12px));
-          -webkit-filter: blur(clamp(2px, 0.125em, 12px));
-          -moz-filter: blur(clamp(2px, 0.125em, 12px));
-          -ms-filter: blur(clamp(2px, 0.125em, 12px));
-          overflow: visible;
-          pointer-events: none;
-      }
-      /* Shadow */
-
-      .button-shadow::after {
-          content: "";
-          position: absolute;
-          z-index: 0;
-          inset: 0;
-          border-radius: 999vw;
-          background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
-          width: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
-          height: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
-          top: calc(var(--shadow-cuttoff-fix) - 0.5em);
-          left: calc(var(--shadow-cuttoff-fix) - 0.875em);
-          padding: 0.125em;
-          box-sizing: border-box;
-          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-          mask-composite: exclude;
-          transition: all var(--anim--hover-time) var(--anim--hover-ease);
-          overflow: visible;
-          opacity: 1;
-      }
-      /* ========== BUTTON BASE STYLES ========== */
-
-      #saveAsPdfButton{
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 10px 20px;
-        /*position: relative;*/
-        display: inline-block;
-        /*padding: 1em 2em;*/
-        color: white;
-        border: none;
-        cursor: pointer;
-        overflow: hidden;
-        /*font-size: 1.2rem;*/
-          /*all: unset;*/
-          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-          pointer-events: auto;
-          z-index: 3;
-          background: linear-gradient(
-                  -75deg,
-                  rgba(255, 255, 255, 0.05),
-                  rgba(255, 255, 255, 0.2),
-                  rgba(255, 255, 255, 0.05)
-          );
-
-          box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-          inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-          0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-          0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-          0 0 0 0 rgba(255, 255, 255, 1);
-          border-radius: 999vw;
-          backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-          -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-          -moz-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-          -ms-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-          transition: all var(--anim--hover-time) var(--anim--hover-ease);
-    }
-      #saveAsPdfButton:hover{
-          transform: scale(0.975);
-          backdrop-filter: blur(0.01em);
-          -webkit-backdrop-filter: blur(0.01em);
-          -moz-backdrop-filter: blur(0.01em);
-          -ms-backdrop-filter: blur(0.01em);
-          box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-          inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-          0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
-          0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
-          0 0 0 0 rgba(255, 255, 255, 1);
-      }
-      #saveAsPdfButton span {
-          position: relative;
-          display: block;
-          user-select: none;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          font-family: "Inter", sans-serif;
-          letter-spacing: -0.05em;
-          font-weight: 500;
-          /*font-size: 1em;*/
-          color: #e0e0e0;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-          text-shadow: 0em 0.25em 0.05em rgba(0, 0, 0, 0.1);
-          transition: all var(--anim--hover-time) var(--anim--hover-ease);
-          /*padding-inline: 1.5em;*/
-          /*padding-block: 0.875em;*/
-      }
-      .light #saveAsPdfButton span{
-          color: rgba(50, 50, 50, 1);
-
-      }
-      #saveAsPdfButton:hover span {
-          text-shadow: 0.025em 0.025em 0.025em rgba(0, 0, 0, 0.12);
-      }
-      #saveAsPdfButton span::after {
-          content: "";
-          display: block;
-          position: absolute;
-          z-index: 1;
-          width: calc(100% - var(--border-width)); /* Prevent overlapping border */
-          height: calc(100% - var(--border-width));
-          top: calc(0% + var(--border-width) / 2);
-          left: calc(0% + var(--border-width) / 2);
-          box-sizing: border-box;
-          border-radius: 999vw;
-          overflow: clip;
-          background: linear-gradient(
-                  var(--angle-2),
-                  rgba(255, 255, 255, 0) 0%,
-                  rgba(255, 255, 255, 0.5) 40% 50%,
-                  rgba(255, 255, 255, 0) 55%
-          );
-          z-index: 3;
-          mix-blend-mode: screen;
-          pointer-events: none;
-          background-size: 200% 200%;
-          background-position: 0% 50%;
-          background-repeat: no-repeat;
-          transition: background-position calc(var(--anim--hover-time) * 1.25)
-          var(--anim--hover-ease),
-          --angle-2 calc(var(--anim--hover-time) * 1.25) var(--anim--hover-ease);
-      }
-      .dark #saveAsPdfButton span::after{
-          background: none;
-      }
-      #saveAsPdfButton:hover span::after {
-          background-position: 25% 50%;
-      }
-
-      #saveAsPdfButton:active span::after {
-          background-position: 50% 15%;
-          --angle-2: -15deg;
-      }
-      @media (hover: none) and (pointer: coarse) {
-          #saveAsPdfButton span::after,
-          #saveAsPdfButton:active span::after {
-              --angle-2: -45deg;
-          }
-      }
-      #saveAsPdfButton::after {
-          content: "";
-          position: absolute;
-          z-index: 1;
-          inset: 0;
-          border-radius: 999vw;
-          width: calc(100% + var(--border-width));
-          height: calc(100% + var(--border-width));
-          top: calc(0% - var(--border-width) / 2);
-          left: calc(0% - var(--border-width) / 2);
-          padding: var(--border-width);
-          box-sizing: border-box;
-          background: conic-gradient(
-                  from var(--angle-1) at 50% 50%,
-                  rgba(0, 0, 0, 0.5),
-                  rgba(0, 0, 0, 0) 5% 40%,
-                  rgba(0, 0, 0, 0.5) 50%,
-                  rgba(0, 0, 0, 0) 60% 95%,
-                  rgba(0, 0, 0, 0.5)
-          ),
-          linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
-          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-          mask-composite: exclude;
-          transition: all var(--anim--hover-time) var(--anim--hover-ease),
-          --angle-1 500ms ease;
-          box-shadow: inset 0 0 0 calc(var(--border-width) / 2) rgba(255, 255, 255, 0.5);
-      }
-      #saveAsPdfButton:hover::after {
-          --angle-1: -125deg;
-      }
-
-      #saveAsPdfButton:active::after {
-          --angle-1: -75deg;
-      }
-
-      @media (hover: none) and (pointer: coarse) {
-          #saveAsPdfButton::after,
-          #saveAsPdfButton:hover::after,
-          #saveAsPdfButton:active::after {
-              --angle-1: -75deg;
-          }
-      }
-      .button-wrap:has(#saveAsPdfButton:active) {
-          transform: rotate3d(1, 0, 0, 25deg);
-      }
-
-
-    #copyEmailButton svg:hover {
-      fill: #ffaa00;
-      transition: fill 0.2s;
-    }
-    #toast {
-      position: absolute;
-      top: 30px;
-      left: 50%;
-      transform: translateX(-50%) translateY(-40px);
-      min-width: 120px;
-        background: linear-gradient(
-                -75deg,
-                rgba(255, 255, 255, 0.05),
-                rgba(255, 255, 255, 0.2),
-                rgba(255, 255, 255, 0.05)
-        );
-
-        box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-        inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-        0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-        0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-        0 0 0 0 rgba(255, 255, 255, 1);
-          backdrop-filter: blur(8px);
-          color: #fff;
-      text-align: center;
-      border-radius: 32px;
-
-      padding: 10px 20px;
-      font-size: 1rem;
-      opacity: 0;
-      pointer-events: none;
-      z-index: 9999;
-      transition: opacity 0.4s, transform 0.4s;
-    }
-    .light #toast{
-        color: rgba(50, 50, 50, 1);
-    }
-    #toast.show {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-      pointer-events: auto;
-    }
-
-
-    .switch-container {
-      position: relative;
-      width: 54px;
-      margin: 0 ;
-      height: 24px;
-    }
-
-    .switch-checkbox {
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      opacity: 0;
-      z-index: 100;
-      cursor: pointer;
-    }
-
-    .switch-label {
-      height: 24px;
-      width: 54px;
-      border-radius: 100px;
-      display: block;
-
-      position: relative;
-      overflow: hidden;
-        background: linear-gradient(
-                -75deg,
-                rgba(255, 255, 255, 0.05),
-                rgba(255, 255, 255, 0.2),
-                rgba(255, 255, 255, 0.05)
-        );
-
-        box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-        inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-        0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-        0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-        0 0 0 0 rgba(255, 255, 255, 1);
-    }
-      .switch-label:hover{
-          transform: scale(0.975);
-          backdrop-filter: blur(0.01em);
-          -webkit-backdrop-filter: blur(0.01em);
-          -moz-backdrop-filter: blur(0.01em);
-          -ms-backdrop-filter: blur(0.01em);
-          box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-          inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-          0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
-          0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
-          0 0 0 0 rgba(255, 255, 255, 1);
-      }
-
-    .switch-bulb-icon {
-      height: 12px;
-      width: 12px;
-      /*background-color: var(--unchecked-color);*/
-        background: linear-gradient(
-                -75deg,
-                rgba(255, 255, 255, 0.05),
-                rgba(255, 255, 255, 0.2),
-                rgba(255, 255, 255, 0.05)
-        );
-      border-radius: 50%;
-      position: absolute;
-      top: 6px;
-      left: 6px;
-      display: block;
-      transition: 0.7s;
-      /*box-shadow:*/
-      /*  inset 0 0 1px 3px var(--unchecked-color),*/
-      /*  inset 0 0 6px 8px var(--unchecked-color),*/
-      /*  0 20px 30px -10px rgba(0, 0, 0, 0.4);*/
-        box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-        inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-        0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-        0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-        0 0 0 0 rgba(255, 255, 255, 1);
-    }
-
-    .switch-bulb-center {
-      position: absolute;
-      display: block;
-      height: 16px;
-      width: 16px;
-      /*background-color: var(--unchecked-color);*/
-        background: linear-gradient(
-                -75deg,
-                rgba(255, 255, 255, 0.05),
-                rgba(255, 255, 255, 0.2),
-                rgba(255, 255, 255, 0.05)
-        );
-        box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-        inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-        0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-        0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-        0 0 0 0 rgba(255, 255, 255, 1);
-      border-radius: 50%;
-      top: 50%;
-      left: 50%;
-      transition: 0.7s;
-      transform: translate(-50%, -50%);
-      /*box-shadow: inset 0 0 0 4px var(--unchecked-color);*/
-    }
-    .switch-bulb-center:after {
-      content: "";
-      display: block;
-      height: 14px;
-      width: 14px;
-      background-color: var(--unchecked-color);
-      border-radius: 50%;
-      position: absolute;
-      transition: 0.7s;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      /*box-shadow: 0 0 2px 4px var(--unchecked-color);*/
-        background: linear-gradient(
-                -75deg,
-                rgba(255, 255, 255, 0.05),
-                rgba(255, 255, 255, 0.2),
-                rgba(255, 255, 255, 0.05)
-        );
-        box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-        inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-        0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-        0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-        0 0 0 0 rgba(255, 255, 255, 1);
-    }
-
-    /* Checked State */
-    .switch-checkbox:checked ~ .switch-label .switch-bulb-icon {
-      left: 35px;
-        background: unset;
-      /*background-color: var(--checked-color);*/
-        background: linear-gradient(-75deg, #fc64538f, #fc6453a1, #fc645300)
-
-    }
-    .switch-checkbox:checked ~ .switch-label .switch-bulb-icon > .switch-bulb-center {
-        background: unset;
-
-        /*background-color: #fc6453a1;*/
-        background: linear-gradient(-75deg, #fc6453b8, #fc64534d, #fc6453)
-
-    }
-    .switch-checkbox:checked ~ .switch-label .switch-bulb-icon > .switch-bulb-center:after {
-      /*background-color: #fc64532b;*/
-        background: linear-gradient(-75deg, #fc64538f, #fc6453a1, #fc645369)
-
-    }
-
-    .mobile-header{
-        display: none;
-    }
-    .desktop-header{
-        margin-top: 41px;
-    }
-
-
-
-    @media screen and (max-width: 768px) {
-        .mobile-header{
-          display: block;
+        table {
+            width: 100%;
+            border-collapse: collapse;
         }
-        .desktop-header{
-         display: none;
-        }
-      .container {
-        grid-template-columns: 1fr;
-      }
-      .right-column {
-        border-left: none;
-        padding-left: 0;
-      }
-      .switch-container{
-          position: fixed;
-                  top: 20px;
-                  right: 20px;
-      }
-      #saveAsPdfButton{
-          bottom: unset;
-          top: 50px;
 
-      }
-    }
-  </style>
+        th {
+            text-align: left;
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            padding-bottom: 0.5rem;
+        }
+
+        td {
+            vertical-align: top;
+            padding: 0.25rem 0;
+        }
+
+        td i {
+            margin-right: 8px;
+            color: var(--accent-color);
+        }
+
+        /* ========== BUTTON ========== */
+        /* Button Wrap Container */
+
+        .button-wrap {
+            position: relative;
+            z-index: 2;
+            border-radius: 999vw;
+            background: transparent;
+            pointer-events: none;
+            transition: all var(--anim--hover-time) var(--anim--hover-ease);
+        }
+
+        /* Button Shadow Container */
+
+        .button-shadow {
+            --shadow-cuttoff-fix: 2em;
+            position: absolute;
+            width: calc(100% + var(--shadow-cuttoff-fix));
+            height: calc(100% + var(--shadow-cuttoff-fix));
+            top: calc(0% - var(--shadow-cuttoff-fix) / 2);
+            left: calc(0% - var(--shadow-cuttoff-fix) / 2);
+            filter: blur(clamp(2px, 0.125em, 12px));
+            -webkit-filter: blur(clamp(2px, 0.125em, 12px));
+            -moz-filter: blur(clamp(2px, 0.125em, 12px));
+            -ms-filter: blur(clamp(2px, 0.125em, 12px));
+            overflow: visible;
+            pointer-events: none;
+        }
+
+        /* Shadow */
+
+        .button-shadow::after {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            inset: 0;
+            border-radius: 999vw;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+            width: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
+            height: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
+            top: calc(var(--shadow-cuttoff-fix) - 0.5em);
+            left: calc(var(--shadow-cuttoff-fix) - 0.875em);
+            padding: 0.125em;
+            box-sizing: border-box;
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask-composite: exclude;
+            transition: all var(--anim--hover-time) var(--anim--hover-ease);
+            overflow: visible;
+            opacity: 1;
+        }
+
+        /* ========== BUTTON BASE STYLES ========== */
+
+        #saveAsPdfButton {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            /*position: relative;*/
+            display: inline-block;
+            /*padding: 1em 2em;*/
+            color: white;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            /*font-size: 1.2rem;*/
+            /*all: unset;*/
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            pointer-events: auto;
+            z-index: 3;
+            background: linear-gradient(
+                    -75deg,
+                    rgba(255, 255, 255, 0.05),
+                    rgba(255, 255, 255, 0.2),
+                    rgba(255, 255, 255, 0.05)
+            );
+
+            box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+            inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+            0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+            0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
+            0 0 0 0 rgba(255, 255, 255, 1);
+            border-radius: 999vw;
+            backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+            -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+            -moz-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+            -ms-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+            transition: all var(--anim--hover-time) var(--anim--hover-ease);
+        }
+
+        #saveAsPdfButton:hover {
+            transform: scale(0.975);
+            backdrop-filter: blur(0.01em);
+            -webkit-backdrop-filter: blur(0.01em);
+            -moz-backdrop-filter: blur(0.01em);
+            -ms-backdrop-filter: blur(0.01em);
+            box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+            inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+            0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
+            0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
+            0 0 0 0 rgba(255, 255, 255, 1);
+        }
+
+        #saveAsPdfButton span {
+            position: relative;
+            display: block;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            font-family: "Inter", sans-serif;
+            letter-spacing: -0.05em;
+            font-weight: 500;
+            /*font-size: 1em;*/
+            color: #e0e0e0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-shadow: 0em 0.25em 0.05em rgba(0, 0, 0, 0.1);
+            transition: all var(--anim--hover-time) var(--anim--hover-ease);
+            /*padding-inline: 1.5em;*/
+            /*padding-block: 0.875em;*/
+        }
+
+        .light #saveAsPdfButton span {
+            color: rgba(50, 50, 50, 1);
+
+        }
+
+        #saveAsPdfButton:hover span {
+            text-shadow: 0.025em 0.025em 0.025em rgba(0, 0, 0, 0.12);
+        }
+
+        #saveAsPdfButton span::after {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 1;
+            width: calc(100% - var(--border-width)); /* Prevent overlapping border */
+            height: calc(100% - var(--border-width));
+            top: calc(0% + var(--border-width) / 2);
+            left: calc(0% + var(--border-width) / 2);
+            box-sizing: border-box;
+            border-radius: 999vw;
+            overflow: clip;
+            background: linear-gradient(
+                    var(--angle-2),
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.5) 40% 50%,
+                    rgba(255, 255, 255, 0) 55%
+            );
+            z-index: 3;
+            mix-blend-mode: screen;
+            pointer-events: none;
+            background-size: 200% 200%;
+            background-position: 0% 50%;
+            background-repeat: no-repeat;
+            transition: background-position calc(var(--anim--hover-time) * 1.25) var(--anim--hover-ease),
+            --angle-2 calc(var(--anim--hover-time) * 1.25) var(--anim--hover-ease);
+        }
+
+        .dark #saveAsPdfButton span::after {
+            background: none;
+        }
+
+        #saveAsPdfButton:hover span::after {
+            background-position: 25% 50%;
+        }
+
+        #saveAsPdfButton:active span::after {
+            background-position: 50% 15%;
+            --angle-2: -15deg;
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            #saveAsPdfButton span::after,
+            #saveAsPdfButton:active span::after {
+                --angle-2: -45deg;
+            }
+        }
+
+        #saveAsPdfButton::after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            inset: 0;
+            border-radius: 999vw;
+            width: calc(100% + var(--border-width));
+            height: calc(100% + var(--border-width));
+            top: calc(0% - var(--border-width) / 2);
+            left: calc(0% - var(--border-width) / 2);
+            padding: var(--border-width);
+            box-sizing: border-box;
+            background: conic-gradient(
+                    from var(--angle-1) at 50% 50%,
+                    rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0) 5% 40%,
+                    rgba(0, 0, 0, 0.5) 50%,
+                    rgba(0, 0, 0, 0) 60% 95%,
+                    rgba(0, 0, 0, 0.5)
+            ),
+            linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask-composite: exclude;
+            transition: all var(--anim--hover-time) var(--anim--hover-ease),
+            --angle-1 500ms ease;
+            box-shadow: inset 0 0 0 calc(var(--border-width) / 2) rgba(255, 255, 255, 0.5);
+        }
+
+        #saveAsPdfButton:hover::after {
+            --angle-1: -125deg;
+        }
+
+        #saveAsPdfButton:active::after {
+            --angle-1: -75deg;
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            #saveAsPdfButton::after,
+            #saveAsPdfButton:hover::after,
+            #saveAsPdfButton:active::after {
+                --angle-1: -75deg;
+            }
+        }
+
+        .button-wrap:has(#saveAsPdfButton:active) {
+            transform: rotate3d(1, 0, 0, 25deg);
+        }
+
+
+        #copyEmailButton svg:hover {
+            fill: #ffaa00;
+            transition: fill 0.2s;
+        }
+
+        #toast {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-40px);
+            min-width: 120px;
+            background: linear-gradient(
+                    -75deg,
+                    rgba(255, 255, 255, 0.05),
+                    rgba(255, 255, 255, 0.2),
+                    rgba(255, 255, 255, 0.05)
+            );
+
+            box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+            inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+            0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+            0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
+            0 0 0 0 rgba(255, 255, 255, 1);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            text-align: center;
+            border-radius: 32px;
+
+            padding: 10px 20px;
+            font-size: 1rem;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 9999;
+            transition: opacity 0.4s, transform 0.4s;
+        }
+
+        .light #toast {
+            color: rgba(50, 50, 50, 1);
+        }
+
+        #toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+
+        .switch-container {
+            position: relative;
+            width: 54px;
+            margin: 0;
+            height: 24px;
+        }
+
+        .switch-checkbox {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            z-index: 100;
+            cursor: pointer;
+        }
+
+        .switch-label {
+            height: 24px;
+            width: 54px;
+            border-radius: 100px;
+            display: block;
+
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(
+                    -75deg,
+                    rgba(255, 255, 255, 0.05),
+                    rgba(255, 255, 255, 0.2),
+                    rgba(255, 255, 255, 0.05)
+            );
+
+            box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+            inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+            0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+            0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
+            0 0 0 0 rgba(255, 255, 255, 1);
+        }
+
+        .switch-label:hover {
+            transform: scale(0.975);
+            backdrop-filter: blur(0.01em);
+            -webkit-backdrop-filter: blur(0.01em);
+            -moz-backdrop-filter: blur(0.01em);
+            -ms-backdrop-filter: blur(0.01em);
+            box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+            inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+            0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
+            0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
+            0 0 0 0 rgba(255, 255, 255, 1);
+        }
+
+        .switch-bulb-icon {
+            height: 12px;
+            width: 12px;
+            /*background-color: var(--unchecked-color);*/
+            background: linear-gradient(
+                    -75deg,
+                    rgba(255, 255, 255, 0.05),
+                    rgba(255, 255, 255, 0.2),
+                    rgba(255, 255, 255, 0.05)
+            );
+            border-radius: 50%;
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            display: block;
+            transition: 0.7s;
+            /*box-shadow:*/
+            /*  inset 0 0 1px 3px var(--unchecked-color),*/
+            /*  inset 0 0 6px 8px var(--unchecked-color),*/
+            /*  0 20px 30px -10px rgba(0, 0, 0, 0.4);*/
+            box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+            inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+            0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+            0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
+            0 0 0 0 rgba(255, 255, 255, 1);
+        }
+
+        .switch-bulb-center {
+            position: absolute;
+            display: block;
+            height: 16px;
+            width: 16px;
+            /*background-color: var(--unchecked-color);*/
+            background: linear-gradient(
+                    -75deg,
+                    rgba(255, 255, 255, 0.05),
+                    rgba(255, 255, 255, 0.2),
+                    rgba(255, 255, 255, 0.05)
+            );
+            box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+            inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+            0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+            0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
+            0 0 0 0 rgba(255, 255, 255, 1);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transition: 0.7s;
+            transform: translate(-50%, -50%);
+            /*box-shadow: inset 0 0 0 4px var(--unchecked-color);*/
+        }
+
+        .switch-bulb-center:after {
+            content: "";
+            display: block;
+            height: 14px;
+            width: 14px;
+            background-color: var(--unchecked-color);
+            border-radius: 50%;
+            position: absolute;
+            transition: 0.7s;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /*box-shadow: 0 0 2px 4px var(--unchecked-color);*/
+            background: linear-gradient(
+                    -75deg,
+                    rgba(255, 255, 255, 0.05),
+                    rgba(255, 255, 255, 0.2),
+                    rgba(255, 255, 255, 0.05)
+            );
+            box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+            inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+            0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+            0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
+            0 0 0 0 rgba(255, 255, 255, 1);
+        }
+
+        /* Checked State */
+        .switch-checkbox:checked ~ .switch-label .switch-bulb-icon {
+            left: 35px;
+            background: unset;
+            /*background-color: var(--checked-color);*/
+            background: linear-gradient(-75deg, #fc64538f, #fc6453a1, #fc645300)
+
+        }
+
+        .switch-checkbox:checked ~ .switch-label .switch-bulb-icon > .switch-bulb-center {
+            background: unset;
+
+            /*background-color: #fc6453a1;*/
+            background: linear-gradient(-75deg, #fc6453b8, #fc64534d, #fc6453)
+
+        }
+
+        .switch-checkbox:checked ~ .switch-label .switch-bulb-icon > .switch-bulb-center:after {
+            /*background-color: #fc64532b;*/
+            background: linear-gradient(-75deg, #fc64538f, #fc6453a1, #fc645369)
+
+        }
+
+        .mobile-header {
+            display: none;
+        }
+
+        .desktop-header {
+            margin-top: 41px;
+        }
+
+
+        @media screen and (max-width: 768px) {
+            .mobile-header {
+                display: block;
+            }
+
+            .desktop-header {
+                display: none;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .right-column {
+                border-left: none;
+                padding-left: 0;
+            }
+
+            .switch-container {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+            }
+
+            #saveAsPdfButton {
+                bottom: unset;
+                top: 50px;
+
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <div class="container">
+<div class="container">
     <!-- LEFT COLUMN -->
     <div class="left-column">
         <section class="section mobile-header">
-          <h1>Karl-Milann <br><span class="highlight">LOBIR</span></h1>
-          <p>📍 18 Rua das Flores, Lisboa</p>
-          <a href="https://wa.me/qr/FOMDIPXDBFJQN1" >📞 +33695848607</a>
-          <p>✉️ <a href="mailto:karl-milann-henri.lobir@protonmail.com" id="emailLinkMobile">karl-milann-henri.lobir@protonmail.com</a>
-              <span id="copyEmailButtonMobile" style="cursor:pointer; vertical-align:middle; margin-left:8px;">
+            <h1>Karl-Milann <br><span class="highlight">LOBIR</span></h1>
+            <p>📍 18 Rua das Flores, Lisboa</p>
+            <a href="https://wa.me/qr/FOMDIPXDBFJQN1">📞 +33695848607</a>
+            <p>✉️ <a href="mailto:karl-milann-henri.lobir@protonmail.com" id="emailLinkMobile">karl-milann-henri.lobir@protonmail.com</a>
+                <span id="copyEmailButtonMobile" style="cursor:pointer; vertical-align:middle; margin-left:8px;">
                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="#00aaff" viewBox="0 0 24 24">
                    <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h11v16z"/>
                  </svg>
                </span>
-          </p>
+            </p>
         </section>
-      <section class="section">
-        <h2>Known Computer Languages</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Frontend</th>
-              <th>Backend</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>HTML</td>
-              <td>PHP</td>
-              <td>GIT</td>
-            </tr>
-            <tr>
-              <td>CSS | LESS | SCSS</td>
-              <td>Python</td>
-              <td>SVN</td>
-            </tr>
-            <tr>
-              <td>Javascript | TypeScript</td>
-              <td>JavaEE | Spring | SpringBoot | Struts</td>
-            </tr>
-            <tr>
-              <td>Angular 5–9</td>
-              <td>dotNet</td>
-            </tr>
-            <tr>
-              <td>JAVA Android</td>
-              <td>Go (Beginner)</td>
-            </tr>
-            <tr>
-              <td>React JS - 16-18</td>
-              <td>C#</td>
-            </tr>
-            <tr>
-              <td>Remix</td>
-              <td></td>
+        <section class="section">
+            <h2>Known Computer Languages</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Frontend</th>
+                    <th>Backend</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>HTML</td>
+                    <td>PHP</td>
+                    <td>GIT</td>
+                </tr>
+                <tr>
+                    <td>CSS | LESS | SCSS</td>
+                    <td>Python</td>
+                    <td>SVN</td>
+                </tr>
+                <tr>
+                    <td>Javascript | TypeScript</td>
+                    <td>JavaEE | Spring | SpringBoot | Struts</td>
+                </tr>
+                <tr>
+                    <td>Angular 5–9</td>
+                    <td>dotNet</td>
+                </tr>
+                <tr>
+                    <td>JAVA Android</td>
+                    <td>Go (Beginner)</td>
+                </tr>
+                <tr>
+                    <td>React JS - 16-18</td>
+                    <td>C#</td>
+                </tr>
+                <tr>
+                    <td>Remix</td>
+                    <td></td>
 
-            </tr>
-            <tr>
-              <td>NextJS</td>
-              <td></td>
+                </tr>
+                <tr>
+                    <td>NextJS</td>
+                    <td></td>
 
-            </tr>
-          </tbody>
-        </table>
-      </section>
+                </tr>
+                </tbody>
+            </table>
+        </section>
 
-      <section class="section">
-        <h2>Professional Experiences</h2>
-        <div class="job">
-                  <div class="job-title">Luminous | AI coaching platform | May 2024 – Now</div>
-                  <ul>
+        <section class="section">
+            <h2>Professional Experiences</h2>
+            <div class="job">
+                <div class="job-title">Luminous | AI coaching platform | May 2024 – Now</div>
+                <ul>
                     <li><strong>luminous.coach</strong> | Fullstack development and CICD management of the platform
-                      <br><span class="job-subtitle"><code>React 16</code>, <code>nodeJS (Strapi)</code>, <code>Remix</code>,<code>React 18</code>, <code>python (Django)</code>, <code>langraph</code>, <code>LLM</code>, <code>prompting</code>, <code>MySQL</code>,<code>Digital Ocean</code></span>
-                      <p>
-                              Responsible for the maintenance and development of the entire stack of the Luminous SaaS, an AI-powered coaching suite designed to elevate B2B commercial performance.
-                              <br><span class="highlight">Led the modernization of the platform by migrating from an inherited <code>React 16</code> + <code>Strapi (NodeJS)</code> stack to a robust architecture featuring a <code>Remix</code> frontend, <code>Strapi (NodeJS)</code> backend, and a new <code>Django</code> backend for advanced AI and chat functionalities.</span>
-                              <br>
-                              Actively participated in every decision-making process, providing technical advice and strategic input. Conducted extensive teaching and knowledge-sharing sessions with non-technical collaborators to bridge the gap and ensure smooth collaboration, as the sole technical team member.
-                            </p>
-                            <ul>
-                              <li><code>React 16</code> to <code>React 18</code>|<code>Remix</code> migration | <code>MySQL</code> | <code>nodeJS (Strapi)</code>:
-                                Developed and maintained robust, scalable backend and frontend systems enabling 24/7 access to AI coaches for self-coaching sessions, chat summaries, and goal/action setting.
-                              </li>
-                              <li><code>python (Django)</code>|<code>langraph</code>|<code>LLM</code>|<code>prompting</code>:
-                                Integrated advanced AI technologies (LLMs, RAG, langraph) to deliver contextualized, personalized coaching experiences, including document and CRM data ingestion for deep customization.
-                              </li>
-                              <li><code>Digital Ocean</code>:
-                                Built and optimized CI/CD pipelines to ensure rapid, reliable deployments and a high-velocity release cycle.
-                              </li>
-                              <li><code>React 18</code>|<code>Remix</code>:
-                                Enhanced user experience by implementing secure authentication, seamless onboarding, and responsive UI components.
-                              </li>
-                              <li>
-                                Collaborated directly with non-technical stakeholders, providing technical advice and strategic input, and conducted knowledge-sharing sessions to bridge the gap between business and engineering.
-                              </li>
-                              <li>
-                                Contributed to the platform’s ability to support multiple product tiers (Lite, Pro, Max), each with distinct feature sets and usage limits.
-                              </li>
-                              <li><code>React 18</code>|<code>Remix</code>|<code>nodeJS (Strapi)</code>|<code>python (Django)</code>
-                                Ensured data privacy and security best practices, especially in handling sensitive coaching and business intelligence data.
-                              </li>
-                            </ul>
-                            <p>
-                              My work directly supported Luminous’s mission to help B2B organizations and professionals prepare for meetings, improve sales conversations, and build lasting client relationships through AI-enhanced coaching and actionable insights.
-                            </p>                    </li>
-                  </ul>
-                </div>
+                        <br><span
+                                class="job-subtitle"><code>React 16</code>, <code>nodeJS (Strapi)</code>, <code>Remix</code>,<code>React 18</code>, <code>python (Django)</code>, <code>langraph</code>, <code>LLM</code>, <code>prompting</code>, <code>MySQL</code>,<code>Digital Ocean</code></span>
+                        <p>
+                            Responsible for the maintenance and development of the entire stack of the Luminous SaaS, an
+                            AI-powered coaching suite designed to elevate B2B commercial performance.
+                            <br><span class="highlight">Led the modernization of the platform by migrating from an inherited <code>React 16</code> + <code>Strapi (NodeJS)</code> stack to a robust architecture featuring a <code>Remix</code> frontend, <code>Strapi (NodeJS)</code> backend, and a new <code>Django</code> backend for advanced AI and chat functionalities.</span>
+                            <br>
+                            Actively participated in every decision-making process, providing technical advice and
+                            strategic input. Conducted extensive teaching and knowledge-sharing sessions with
+                            non-technical collaborators to bridge the gap and ensure smooth collaboration, as the sole
+                            technical team member.
+                        </p>
+                        <ul>
+                            <li><code>React 16</code> to <code>React 18</code>|<code>Remix</code> migration | <code>MySQL</code>
+                                | <code>nodeJS (Strapi)</code>:
+                                Developed and maintained robust, scalable backend and frontend systems enabling 24/7
+                                access to AI coaches for self-coaching sessions, chat summaries, and goal/action
+                                setting.
+                            </li>
+                            <li><code>python
+                                (Django)</code>|<code>langraph</code>|<code>LLM</code>|<code>prompting</code>:
+                                Integrated advanced AI technologies (LLMs, RAG, langraph) to deliver contextualized,
+                                personalized coaching experiences, including document and CRM data ingestion for deep
+                                customization.
+                            </li>
+                            <li><code>Digital Ocean</code>:
+                                Built and optimized CI/CD pipelines to ensure rapid, reliable deployments and a
+                                high-velocity release cycle.
+                            </li>
+                            <li><code>React 18</code>|<code>Remix</code>:
+                                Enhanced user experience by implementing secure authentication, seamless onboarding, and
+                                responsive UI components.
+                            </li>
+                            <li>
+                                Collaborated directly with non-technical stakeholders, providing technical advice and
+                                strategic input, and conducted knowledge-sharing sessions to bridge the gap between
+                                business and engineering.
+                            </li>
+                            <li>
+                                Contributed to the platform’s ability to support multiple product tiers (Lite, Pro,
+                                Max), each with distinct feature sets and usage limits.
+                            </li>
+                            <li><code>React 18</code>|<code>Remix</code>|<code>nodeJS (Strapi)</code>|<code>python
+                                (Django)</code>
+                                Ensured data privacy and security best practices, especially in handling sensitive
+                                coaching and business intelligence data.
+                            </li>
+                        </ul>
+                        <p>
+                            My work directly supported Luminous’s mission to help B2B organizations and professionals
+                            prepare for meetings, improve sales conversations, and build lasting client relationships
+                            through AI-enhanced coaching and actionable insights.
+                        </p></li>
+                </ul>
+            </div>
 
-        <div class="job">
-          <div class="job-title">Uncut | Web 3 art platfrom | 2023 – May 2024</div>
-          <ul>
-            <li><strong>uncut.network</strong> | Frontend development of the platform
-              <br><span class="job-subtitle"><code>NextJS</code>, <code>graphQL</code>, <code>LESS</code>, <code>UI/UX quality</code></span>
-              <br><p>Heavy leverage of <code>NextJs</code> SSR capabilities and <code>graphQL</code> querying caching system to ensure a quick page loading. </p>
-               <p>
-                     Maintained and developed new features in a fast-paced, weekly release environment. Key contributions included:
-                     <ul>
-                       <li><code>NextJS</code>|<code>graphQL</code>:
-                         Complete redesign and implementation of personalized profile pages, integrating user-specific content and social features.
-                       </li>
-                       <li><code>NextJS</code>|<code>graphQL</code>:
-                         Built a social media-like feed, enabling users to post, interact, and share platform-linked content.
-                       </li>
-                       <li><code>NextJS</code>|<code>graphQL</code>:
-                         Developed a daily curation system empowering selected power users to highlight and promote digital artworks.
-                       </li>
-                       <li><code>NextJS</code>|<code>graphQL</code>:
-                         Implemented a reward and gamification system to incentivize user engagement and content creation.
-                       </li>
-                       <li><code>NextJS</code>|<code>graphQL</code>:
-                         Created an Explore section focused on digital art discovery, with advanced filtering (by availability, creator level, currency, blockchain, and media type) and fast search capabilities.
-                       </li>
-                       <li><code>NextJS</code>|<code>graphQL</code>:
-                         Added a real-time notification system to keep users updated on platform activity.
-                       </li>
-                       <li><code>UI/UX quality</code>:
-                         Collaborated closely with designers to ensure pixel-perfect UI/UX across all features, maintaining a high standard of accessibility and responsiveness.
-                       </li>
-                     </ul>
-               <p>The platform serves as a marketplace and community for digital art, supporting multiple blockchains (Polygon, Wax, Ethereum), various currencies (ARTX, USDC, WAXP), and advanced filtering for collectibles and creators. My work contributed to a robust, scalable, and user-friendly experience for artists and collectors.</p>
-                </p>
+            <div class="job">
+                <div class="job-title">Uncut | Web 3 art platfrom | 2023 – May 2024</div>
+                <ul>
+                    <li><strong>uncut.network</strong> | Frontend development of the platform
+                        <br><span
+                                class="job-subtitle"><code>NextJS</code>, <code>graphQL</code>, <code>LESS</code>, <code>UI/UX quality</code></span>
+                        <br>
+                        <p>Heavy leverage of <code>NextJs</code> SSR capabilities and <code>graphQL</code> querying
+                            caching system to ensure a quick page loading. </p>
+                        <p>
+                            Maintained and developed new features in a fast-paced, weekly release environment. Key
+                            contributions included:
+                        <ul>
+                            <li><code>NextJS</code>|<code>graphQL</code>:
+                                Complete redesign and implementation of personalized profile pages, integrating
+                                user-specific content and social features.
+                            </li>
+                            <li><code>NextJS</code>|<code>graphQL</code>:
+                                Built a social media-like feed, enabling users to post, interact, and share
+                                platform-linked content.
+                            </li>
+                            <li><code>NextJS</code>|<code>graphQL</code>:
+                                Developed a daily curation system empowering selected power users to highlight and
+                                promote digital artworks.
+                            </li>
+                            <li><code>NextJS</code>|<code>graphQL</code>:
+                                Implemented a reward and gamification system to incentivize user engagement and content
+                                creation.
+                            </li>
+                            <li><code>NextJS</code>|<code>graphQL</code>:
+                                Created an Explore section focused on digital art discovery, with advanced filtering (by
+                                availability, creator level, currency, blockchain, and media type) and fast search
+                                capabilities.
+                            </li>
+                            <li><code>NextJS</code>|<code>graphQL</code>:
+                                Added a real-time notification system to keep users updated on platform activity.
+                            </li>
+                            <li><code>UI/UX quality</code>:
+                                Collaborated closely with designers to ensure pixel-perfect UI/UX across all features,
+                                maintaining a high standard of accessibility and responsiveness.
+                            </li>
+                        </ul>
+                        <p>The platform serves as a marketplace and community for digital art, supporting multiple
+                            blockchains (Polygon, Wax, Ethereum), various currencies (ARTX, USDC, WAXP), and advanced
+                            filtering for collectibles and creators. My work contributed to a robust, scalable, and
+                            user-friendly experience for artists and collectors.</p>
+                        </p>
 
-            </li>
+                    </li>
 
-          </ul>
-        </div>
-        <div class="job">
-          <div class="job-title">Mainsysgroup | Banking Software | 2020 – 2022</div>
-          <ul>
-            <li><strong>CFCAL (client)</strong> | Api + Data flow management for Pumpkin
-              <br><span class="job-subtitle">with Apigee, Nifi, Kibana | <code>Xml</code>, <code>Json</code>, <code>Native JS</code>, <code>Python</code>,<code>NodeJS</code></span>
-              <br><p>Those tools were used to gather all the data flow to one secured place and manipulate then convert the data from SOAP to REST (or the opposite) to send it to other APIs if needed.</p>
-            </li>
-            <li><strong>CFCAL</strong> | Website and desktop app maintenance and new features + SOAP Webservices |
-              <br><span class="job-subtitle"><code>vb.Net</code>, <code>jQuery</code>, <code>Html</code>, <code>Xml</code>, <code>TSQL</code></span>
-              <br><p>Broker website and local app for loan creation and follow-up.
-              Team management and day-to-day client follow-up.</p>
-            </li>
-            <li><strong>CFCAL</strong> | Digital Signing Web Platform for loan validation
-              <br><span class="job-subtitle"><code>C#</code>, <code>Xsp</code>, <code>TSQL</code></span>
-              <br><p>The platform was linked to the previous project. Agile project + Team management.</p>
-            </li>
-            <li><strong>Mainsysgroup</strong> | Fullstack development of a specific product
-              <br><span class="job-subtitle"><code>Jsp</code>, <code>Java 12</code>, <code>PLSQL</code></span>
-              <br><p>Modular website maintenance & development for multiple clients.</p>
-            </li>
-          </ul>
-        </div>
+                </ul>
+            </div>
+            <div class="job">
+                <div class="job-title">Mainsysgroup | Banking Software | 2020 – 2022</div>
+                <ul>
+                    <li><strong>CFCAL (client)</strong> | Api + Data flow management for Pumpkin
+                        <br><span class="job-subtitle">with Apigee, Nifi, Kibana | <code>Xml</code>, <code>Json</code>, <code>Native JS</code>, <code>Python</code>,<code>NodeJS</code></span>
+                        <br>
+                        <p>Those tools were used to gather all the data flow to one secured place and manipulate then
+                            convert the data from SOAP to REST (or the opposite) to send it to other APIs if needed.</p>
+                    </li>
+                    <li><strong>CFCAL</strong> | Website and desktop app maintenance and new features + SOAP Webservices
+                        |
+                        <br><span
+                                class="job-subtitle"><code>vb.Net</code>, <code>jQuery</code>, <code>Html</code>, <code>Xml</code>, <code>TSQL</code></span>
+                        <br>
+                        <p>Broker website and local app for loan creation and follow-up.
+                            Team management and day-to-day client follow-up.</p>
+                    </li>
+                    <li><strong>CFCAL</strong> | Digital Signing Web Platform for loan validation
+                        <br><span class="job-subtitle"><code>C#</code>, <code>Xsp</code>, <code>TSQL</code></span>
+                        <br>
+                        <p>The platform was linked to the previous project. Agile project + Team management.</p>
+                    </li>
+                    <li><strong>Mainsysgroup</strong> | Fullstack development of a specific product
+                        <br><span class="job-subtitle"><code>Jsp</code>, <code>Java 12</code>, <code>PLSQL</code></span>
+                        <br>
+                        <p>Modular website maintenance & development for multiple clients.</p>
+                    </li>
+                </ul>
+            </div>
 
-        <div class="job">
-          <p><strong>Website mission for association « Les Croisades D’Unnord » | 2020</strong><br>
-          Frontend + Backend in <code>Angular 9</code>, <code>JEE(Springboot)</code></p>
+            <div class="job">
+                <p><strong>Website mission for association « Les Croisades D’Unnord » | 2020</strong><br>
+                    Frontend + Backend in <code>Angular 9</code>, <code>JEE(Springboot)</code></p>
 
 
-        </div>
-        <div class="job">
-            <div class="job-title">HEI | 5th year project | 2019</div>
-        <p>
-          Info web app (Wikipedia-like) in Agile from specs to prod.
-          <code>Angular 7</code>, <code>Java Springboot</code></p></div>
+            </div>
+            <div class="job">
+                <div class="job-title">HEI | 5th year project | 2019</div>
+                <p>
+                    Info web app (Wikipedia-like) in Agile from specs to prod.
+                    <code>Angular 7</code>, <code>Java Springboot</code></p></div>
 
-          <div class="job">
-              <div class="job-title">Website mission for auto-entrepreneurs | 2019</div>
-          <p>
-          Design, dev, maintenance in <code>Angular 7</code>, <code>Firebase hosting (serverless)</code></p></div>
+            <div class="job">
+                <div class="job-title">Website mission for auto-entrepreneurs | 2019</div>
+                <p>
+                    Design, dev, maintenance in <code>Angular 7</code>, <code>Firebase hosting (serverless)</code></p>
+            </div>
 
-          <div class="job">
-              <div class="job-title">HEI Micro Association | President | 2015–2016</div>
-          <p>
-          Customer service, tech repair, team management.</p></div>
+            <div class="job">
+                <div class="job-title">HEI Micro Association | President | 2015–2016</div>
+                <p>
+                    Customer service, tech repair, team management.</p></div>
 
-          <div class="job">
-              <div class="job-title">Vallourec and Mannesman | IT Security Internship | 2014</div>
-          <p>
-          Web-based ticket system for security dept + hardware/SAP ERP integration mini-project.</p>
-      </section>
+            <div class="job">
+                <div class="job-title">Vallourec and Mannesman | IT Security Internship | 2014</div>
+                <p>
+                    Web-based ticket system for security dept + hardware/SAP ERP integration mini-project.</p>
+        </section>
     </div>
 
     <!-- RIGHT COLUMN -->
     <div class="right-column">
         <div class="switch-container">
-          <input type="checkbox" id="switchInput" class="switch-checkbox" />
-          <label for="switchInput" class="switch-label">
+            <input type="checkbox" id="switchInput" class="switch-checkbox"/>
+            <label for="switchInput" class="switch-label">
             <span class="switch-bulb-icon">
               <span class="switch-bulb-center"></span>
             </span>
-          </label>
+            </label>
             <div class="button-shadow"></div>
 
         </div>
-      <section class="section desktop-header">
-        <h1>Karl-Milann <br><span class="highlight">LOBIR</span></h1>
-        <p>📍 18 Rua das Flores, Lisboa</p>
-          <a href="https://wa.me/+33695848607" id="whatsappLink">📞 +33695848607</a>
-        <p>✉️ <a href="mailto:karl-milann-henri.lobir@protonmail.com" id="emailLinkDesktop">karl-milann-henri.lobir@protonmail.com</a>
-            <span id="copyEmailButtonDesktop" style="cursor:pointer; vertical-align:middle; margin-left:8px;">
+        <section class="section desktop-header">
+            <h1>Karl-Milann <br><span class="highlight">LOBIR</span></h1>
+            <p>📍 18 Rua das Flores, Lisboa</p>
+            <a href="https://wa.me/+33695848607" id="whatsappLink">📞 +33695848607</a>
+            <p>✉️ <a href="mailto:karl-milann-henri.lobir@protonmail.com" id="emailLinkDesktop">karl-milann-henri.lobir@protonmail.com</a>
+                <span id="copyEmailButtonDesktop" style="cursor:pointer; vertical-align:middle; margin-left:8px;">
                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="#00aaff" viewBox="0 0 24 24">
                  <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h11v16z"/>
                </svg>
              </span>
-        </p>
-      </section>
+            </p>
+        </section>
 
 
+        <section class="section">
+            <h2>Educational Background</h2>
+            <p><strong>Last year of study | 2018 – 2019</strong><br>
+                HEI, General Engineering with specialisation in computer science and information technology.</p>
+        </section>
 
-      <section class="section">
-        <h2>Educational Background</h2>
-        <p><strong>Last year of study | 2018 – 2019</strong><br>
-        HEI, General Engineering with specialisation in computer science and information technology.</p>
-      </section>
+        <section class="section">
+            <h2>Interests</h2>
+            <ul class="interests">
+                <li><strong>Sports:</strong></li>
+                <li>Aikido (10 years, incl. French-speaking events)</li>
+                <li>Penchak-Silat (3 years)</li>
+                <li>Running (leisure)</li>
+                <li><strong>Other:</strong></li>
+                <li>Fantasy & detective literature</li>
+                <li>Series</li>
+                <li>Video games</li>
+                <li>Quantum Computing</li>
+                <li><strong>Travel:</strong> Canada, USA, Ivory Coast, Guadeloupe</li>
+            </ul>
+        </section>
 
-      <section class="section">
-        <h2>Interests</h2>
-        <ul class="interests">
-          <li><strong>Sports:</strong></li>
-          <li>Aikido (10 years, incl. French-speaking events)</li>
-          <li>Penchak-Silat (3 years)</li>
-          <li>Running (leisure)</li>
-          <li><strong>Other:</strong></li>
-          <li>Fantasy & detective literature</li>
-          <li>Series</li>
-          <li>Video games</li>
-          <li>Quantum Computing</li>
-          <li><strong>Travel:</strong> Canada, USA, Ivory Coast, Guadeloupe</li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2>Languages</h2>
-        <ul class="languages">
-          <li>English: Fluent</li>
-          <li>Spanish: Read, written</li>
-          <li>Chinese: basics</li>
-          <li>Portuguese: basics</li>
-        </ul>
-      </section>
+        <section class="section">
+            <h2>Languages</h2>
+            <ul class="languages">
+                <li>English: Fluent</li>
+                <li>Spanish: Read, written</li>
+                <li>Chinese: basics</li>
+                <li>Portuguese: basics</li>
+            </ul>
+        </section>
     </div>
-  </div>
-  <div class="button-wrap">
-  <button id="saveAsPdfButton" >
-      <span>Print | Save as PDF</span>
-      <div class="button-shadow"></div>
-  </button></div>
-  <div id="toast" >
+</div>
+<div class="button-wrap">
+    <button id="saveAsPdfButton">
+        <span>Print | Save as PDF</span>
+        <div class="button-shadow"></div>
+    </button>
+</div>
+<div id="toast">
     Copied!
-  </div>
-  <!-- print or dl as pdf -->
-  <script>
+</div>
+<!-- print or dl as pdf -->
+<script>
     document.getElementById('saveAsPdfButton').addEventListener('click', function () {
-      window.print(); // Opens the browser's print dialog
+        window.print(); // Opens the browser's print dialog
     });
-  </script>
-  <!-- copy email -->
-  <script>
-      function showToast(message) {
-          const toast = document.getElementById('toast');
-          toast.textContent = message;
-          toast.classList.add('show');
-          setTimeout(() => {
-              toast.classList.remove('show');
-          }, 2000);
-      }
+</script>
+<!-- copy email -->
+<script>
+    function showToast(message) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2000);
+    }
+
     // document.getElementById('copyEmailButton').addEventListener('click', function () {
     //     console.log('copied!');
     //   const email = document.getElementById('emailLink').textContent;
@@ -892,31 +974,31 @@
     //     showToast('Email copied!');
     //   });
     // });
-      function setupCopyButton(buttonId, emailLinkId) {
-          const button = document.getElementById(buttonId);
-          if (button) {
-              button.addEventListener('click', function () {
-                  const email = document.getElementById(emailLinkId).textContent;
-                  navigator.clipboard.writeText(email).then(function () {
-                      showToast('Email copied!');
-                  });
-              });
-          }
-      }
+    function setupCopyButton(buttonId, emailLinkId) {
+        const button = document.getElementById(buttonId);
+        if (button) {
+            button.addEventListener('click', function () {
+                const email = document.getElementById(emailLinkId).textContent;
+                navigator.clipboard.writeText(email).then(function () {
+                    showToast('Email copied!');
+                });
+            });
+        }
+    }
 
-      // Setup both copy buttons
-      setupCopyButton('copyEmailButtonMobile', 'emailLinkMobile');
-      setupCopyButton('copyEmailButtonDesktop', 'emailLinkDesktop');
+    // Setup both copy buttons
+    setupCopyButton('copyEmailButtonMobile', 'emailLinkMobile');
+    setupCopyButton('copyEmailButtonDesktop', 'emailLinkDesktop');
 
 
-  </script>
+</script>
 
-  <!-- theme management -->
-  <script>
+<!-- theme management -->
+<script>
     const switchInput = document.getElementById('switchInput');
 
     function updateTheme() {
-      const codes = document.querySelectorAll('code');
+        const codes = document.querySelectorAll('code');
 
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const isDarkMode = switchInput.checked ? false : prefersDark;
@@ -925,6 +1007,7 @@
 
 
     }
+
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
 
 
@@ -932,6 +1015,6 @@
 
     // Initialize on page load
     updateTheme();
-  </script>
+</script>
 </body>
 </html>
