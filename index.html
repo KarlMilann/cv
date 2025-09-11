@@ -33,7 +33,6 @@
         }
 
 
-
         body {
             margin: 0;
             padding: 0;
@@ -403,9 +402,10 @@
         .button-wrap:has(#saveAsPdfButton:active) {
             transform: rotate3d(1, 0, 0, 25deg);
         }
+
         #saveAsPdfButton {
 
-            z-index: 9999 !important;    /* force top layer */
+            z-index: 9999 !important; /* force top layer */
             pointer-events: auto !important;
         }
 
@@ -414,6 +414,7 @@
         .button-shadow {
             pointer-events: none !important; /* so they don’t eat the click */
         }
+
         @media print {
             #saveAsPdfButtonContainer,
             #toast,
@@ -421,6 +422,7 @@
                 visibility: hidden !important;
             }
         }
+
         #copyEmailButton svg:hover {
             fill: #ffaa00;
             transition: fill 0.2s;
@@ -630,6 +632,11 @@
             margin-top: 39px;
         }
 
+        @media screen and (min-width: 1001px) {
+            .desktop-header {
+                margin-top: 54px;
+            }
+        }
 
         @media screen and (max-width: 768px) {
             .mobile-header {
@@ -658,7 +665,7 @@
             #saveAsPdfButton {
                 bottom: unset;
                 top: 50px;
-
+                right: 0;
             }
         }
     </style>
