@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="description" content="Karl-Milann LOBIR - CV. Fullstack developer, AI, Web3, and more"/>
     <title>Karl-Milann LOBIR - CV</title>
-    <script src="https://cdn.jsdelivr.net/npm/sass.js@0.11.1/dist/sass.min.js"></script>
     <style>
         :root {
             --unchecked-color: #A29BA4;
@@ -88,6 +87,34 @@
             -20px -20px 60px #15272e;
 
         }
+        .job  {
+            transition:  all var(--anim--hover-time) var(--anim--hover-ease);
+            display: inline-block; /* needed so transform scales the block nicely */
+        }
+
+        .job:hover {
+            /*position: absolute;*/
+            transform: scale(1.1);
+
+            z-index: 10;
+            background: linear-gradient(
+                    -75deg,
+                    rgba(255, 255, 255, 0.05),
+                    rgba(255, 255, 255, 0.2),
+                    rgba(255, 255, 255, 0.05)
+            );
+
+            box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+            inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+            0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+            0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
+            0 0 0 0 rgba(255, 255, 255, 1);
+            border-radius: 4px;
+            padding: 2px 4px; /* subtle highlight */
+            font-size: 18px;
+        }
+
+
 
         .light .section {
             background: #ffffff33;
