@@ -81,15 +81,38 @@
 
 
         .section {
+            position: relative;
             margin-bottom: 2rem;
-            background: #00000033;
-            padding: 16px;
-            backdrop-filter: blur(12px);
-            border-radius: 8px;
 
-            box-shadow: 20px 20px 60px #0f1d22,
-            -20px -20px 60px #15272e;
+            /*padding: 16px;*/
+            padding: 24px;
+            /*backdrop-filter: blur(12px);*/
+            /*border-radius: 8px;*/
+            border-radius: 46px;
+            /*background: #00000033;*/
+            /*box-shadow: 20px 20px 60px #0f1d22,*/
+            /*-20px -20px 60px #15272e;*/
+            background: linear-gradient(
+                    -75deg,
+                    rgba(255, 255, 255, 0.05),
+                    rgba(255, 255, 255, 0.2),
+                    rgba(255, 255, 255, 0.05)
+            );
 
+            box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+            inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+            0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+            0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
+            0 0 0 0 rgba(255, 255, 255, 1);
+            backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+            -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+            -moz-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+            -ms-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+
+        }
+
+        .section:not(:is(.mobile-header)){
+            display: grid;
         }
         .job  {
             transition:  all var(--anim--hover-time) var(--anim--hover-ease);
@@ -108,42 +131,53 @@
             filter: opacity(0.4);
         }
 
-     
+
         .job:hover{
             scale: 1.01;
+
+        }
+        .section li,
+        .section p,
+        .section a,
+        .section table,
+        .section .job,
+
+        .section h1,
+        .section h2{
+            position: relative;
+            display: block;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            font-family: "Inter", sans-serif;
+            letter-spacing: -0.05em;
+            font-weight: 500;
+            /*color: #e0e0e0;*/
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-shadow: 0em 0.25em 0.05em rgba(0, 0, 0, 0.1);
+            transition: all var(--anim--hover-time) var(--anim--hover-ease);
+        }
+        .section table{
+            display: table;
+        }
+        .section a{
+            display: unset;
+        }
+        .section li,
+        .section p{
+            font-size: 16px;
 
         }
 
 
 
-        /*.job:hover {*/
-        /*    !*position: absolute;*!*/
-        /*    transform: scale(1.1);*/
-
-        /*    z-index: 10;*/
-        /*    background: linear-gradient(*/
-        /*            -75deg,*/
-        /*            rgba(255, 255, 255, 0.05),*/
-        /*            rgba(255, 255, 255, 0.2),*/
-        /*            rgba(255, 255, 255, 0.05)*/
-        /*    );*/
-
-        /*    box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),*/
-        /*    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),*/
-        /*    0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),*/
-        /*    0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),*/
-        /*    0 0 0 0 rgba(255, 255, 255, 1);*/
-        /*    border-radius: 4px;*/
-        /*    padding: 2px 4px; !* subtle highlight *!*/
-        /*    font-size: 18px;*/
-        /*}*/
 
 
 
         .light .section {
             background: #ffffff33;
-            box-shadow: 20px 20px 60px #d9d9d9,
-            -20px -20px 60px #ffffff;
         }
 
 
@@ -182,11 +216,11 @@
 }
         .dark .job ul li p {
             color: rgb(173, 173, 173);
-            font-size: 14px;
+            /*font-size: 14px;*/
 
         }.light .job ul li p {
             color: #222222;
-            font-size: 14px;
+            /*font-size: 14px;*/
 
         }
 
@@ -286,6 +320,10 @@
             transition: all var(--anim--hover-time) var(--anim--hover-ease);
             overflow: visible;
             opacity: 1;
+        }
+        .section > .button-shadow::after{
+            border-radius: 46px;
+
         }
 
         /* ========== BUTTON BASE STYLES ========== */
@@ -482,6 +520,20 @@
             #toast,
             .switch-container {
                 visibility: hidden !important;
+            }
+            * {
+                color: #222222;
+            }
+            .section{
+
+                box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+                inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+                0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
+                0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
+                0 0 0 0 rgba(255, 255, 255, 1);
+            }
+            .button-shadow{
+                display: none;
             }
         }
 
@@ -800,6 +852,7 @@
                 </tr>
                 </tbody>
             </table>
+            <div class="button-shadow"></div>
         </section>
 
         <section class="section">
@@ -971,8 +1024,10 @@
 
             <div class="job">
                 <div class="job-title">Vallourec and Mannesman | IT Security Internship | 2014</div>
-                <p>
-                    Web-based ticket system for security dept + hardware/SAP ERP integration mini-project.</p>
+                <p>Web-based ticket system for security dept + hardware/SAP ERP integration mini-project.</p>
+            </div>
+            <div class="button-shadow"></div>
+
         </section>
     </div>
 
@@ -999,6 +1054,7 @@
                </svg>
              </span>
             </p>
+            <div class="button-shadow"></div>
         </section>
 
 
@@ -1006,6 +1062,7 @@
             <h2>Educational Background</h2>
             <p><strong>Last year of study | 2018 – 2019</strong><br>
                 HEI, General Engineering with specialisation in computer science and information technology.</p>
+            <div class="button-shadow"></div>
         </section>
 
         <section class="section">
@@ -1022,6 +1079,7 @@
                 <li>Quantum Computing</li>
                 <li><strong>Travel:</strong> Canada, USA, Ivory Coast, Guadeloupe</li>
             </ul>
+            <div class="button-shadow"></div>
         </section>
 
         <section class="section">
@@ -1032,6 +1090,7 @@
                 <li>Chinese: basics</li>
                 <li>Portuguese: basics</li>
             </ul>
+            <div class="button-shadow"></div>
         </section>
     </div>
 </div>
@@ -1043,6 +1102,7 @@
 </div>
 <div id="toast">
     Copied!
+    <div class="button-shadow"></div>
 </div>
 <!-- print or dl as pdf -->
 <script>
