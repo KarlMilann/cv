@@ -11,12 +11,18 @@
             --unchecked-color: #A29BA4;
             --checked-color: #fc6453c7;
             --checked-shadow: #fc645321;
-            --accent-color: #29a1ce;
+            --accent-color: #157ad9;
             --global--size: clamp(2rem, 4vw, 5rem);
-            --anim--hover-time: 400ms;
-            --anim--hover-ease: cubic-bezier(0.25, 1, 0.5, 1);
-            --border-width: clamp(1px, 0.0625em, 4px);
+            --anim--hover-time: 250ms;
+            --anim--hover-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --border-width: clamp(0.5px, 0.03125em, 2px);
 
+            /* Modern glass variables */
+            --glass-bg-light: rgba(255, 255, 255, 0.1);
+            --glass-bg-dark: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-shadow: rgba(0, 0, 0, 0.1);
+            --glass-blur: 20px;
         }
 
         @property --angle-1 {
@@ -35,15 +41,16 @@
         body {
             margin: 0;
             padding: 0;
-            font-family:'Rosarivo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-
-
+            font-family:'SF Pro Display', 'Rosarivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         .dark {
-            background: radial-gradient(circle, rgb(15, 32, 39), rgb(27 49 56), rgb(18 34 40));
-            /*background-color: #1e1e1e;*/
-            color: #e0e0e0;
+            background: radial-gradient(ellipse at center,
+                rgba(20, 35, 45, 0.95),
+                rgba(15, 25, 35, 0.98),
+                rgba(10, 20, 30, 1));
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .light {
@@ -68,6 +75,7 @@
 
         h1, h2, h3 {
             color: var(--accent-color);
+            font-weight: 600;
         }
 
         h1, h2 {
@@ -77,38 +85,51 @@
         a {
             color: var(--accent-color);
             text-decoration: none;
+            transition: all var(--anim--hover-time) var(--anim--hover-ease);
+        }
+
+        a:hover {
+            opacity: 0.8;
         }
 
 
         .section {
             position: relative;
             margin-bottom: 2rem;
+            padding: 32px;
+            border-radius: 24px;
 
-            /*padding: 16px;*/
-            padding: 24px;
-            /*backdrop-filter: blur(12px);*/
-            /*border-radius: 8px;*/
-            border-radius: 46px;
-            /*background: #00000033;*/
-            /*box-shadow: 20px 20px 60px #0f1d22,*/
-            /*-20px -20px 60px #15272e;*/
-            background: linear-gradient(
-                    -75deg,
-                    rgba(255, 255, 255, 0.05),
-                    rgba(255, 255, 255, 0.2),
-                    rgba(255, 255, 255, 0.05)
-            );
+            /* Modern Apple-like glass effect */
+            background: linear-gradient(135deg,
+                var(--glass-bg-light) 0%,
+                transparent 50%,
+                var(--glass-bg-dark) 100%);
 
-            box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-            inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-            0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-            0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-            0 0 0 0 rgba(255, 255, 255, 1);
-            backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-            -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-            -moz-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-            -ms-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+            /* Subtle border */
+            border: 1px solid rgba(255, 255, 255, 0.15);
 
+            /* Modern shadow stack - properly contained within border radius */
+            box-shadow:
+                0 4px 16px -4px rgba(0, 0, 0, 0.1),
+                0 8px 32px -8px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+
+            /* Apple-style backdrop blur */
+            backdrop-filter: blur(var(--glass-blur)) saturate(1.2);
+            -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.2);
+
+            /* Subtle animation */
+            transition: all var(--anim--hover-time) var(--anim--hover-ease);
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 6px 24px -6px rgba(0, 0, 0, 0.12),
+                0 12px 48px -12px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.08);
         }
 
         .section:not(:is(.mobile-header)){
@@ -125,23 +146,21 @@
         }
 
         .dark .section:hover .job:not(:hover) {
-            filter: brightness(0.6);
+            filter: brightness(0.7) contrast(0.8);
         }
         .light .section:hover .job:not(:hover) {
-            filter: opacity(0.4);
+            filter: opacity(0.5) contrast(0.9);
         }
 
-
         .job:hover{
-            scale: 1.01;
-
+            scale: 1.02;
+            filter: brightness(1.05);
         }
         .section li,
         .section p,
         .section a,
         .section table,
         .section .job,
-
         .section h1,
         .section h2{
             position: relative;
@@ -150,13 +169,12 @@
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
-            font-family: "Inter", sans-serif;
-            letter-spacing: -0.05em;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif;
+            letter-spacing: -0.01em;
             font-weight: 500;
-            /*color: #e0e0e0;*/
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            text-shadow: 0em 0.25em 0.05em rgba(0, 0, 0, 0.1);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
             transition: all var(--anim--hover-time) var(--anim--hover-ease);
         }
         .section table{
@@ -168,7 +186,7 @@
         .section li,
         .section p{
             font-size: 16px;
-
+            line-height: 1.6; /* Better readability */
         }
 
 
@@ -309,10 +327,10 @@
             inset: 0;
             border-radius: 999vw;
             background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
-            width: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
+            width: calc(100% - var(--shadow-cuttoff-fix) - 0.15em);
             height: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
-            top: calc(var(--shadow-cuttoff-fix) - 0.5em);
-            left: calc(var(--shadow-cuttoff-fix) - 0.875em);
+            top: calc(var(--shadow-cuttoff-fix) - 0.6em);
+            left: calc(var(--shadow-cuttoff-fix) - 0.99em);
             padding: 0.125em;
             box-sizing: border-box;
             mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -322,7 +340,7 @@
             opacity: 1;
         }
         .section > .button-shadow::after{
-            border-radius: 46px;
+            border-radius: 22px;
 
         }
 
@@ -622,9 +640,75 @@
             0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
             0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
             0 0 0 0 rgba(255, 255, 255, 1);
+
+            backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+            -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+            -moz-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+            -ms-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+            transition: all var(--anim--hover-time) var(--anim--hover-ease);
         }
 
-        .switch-label:hover {
+        .switch-label::after {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 1;
+            width: calc(100% - var(--border-width));
+            height: calc(100% - var(--border-width));
+            top: calc(0% + var(--border-width) / 2);
+            left: calc(0% + var(--border-width) / 2);
+            box-sizing: border-box;
+            border-radius: 100px;
+            overflow: clip;
+            background: linear-gradient(
+                    var(--angle-2),
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.5) 40% 50%,
+                    rgba(255, 255, 255, 0) 55%
+            );
+            z-index: 3;
+            mix-blend-mode: screen;
+            pointer-events: auto;
+            background-size: 200% 200%;
+            background-position: 0% 50%;
+            background-repeat: no-repeat;
+            transition: background-position calc(var(--anim--hover-time) * 1.25) var(--anim--hover-ease),
+            --angle-2 calc(var(--anim--hover-time) * 1.25) var(--anim--hover-ease);
+        }
+
+        .dark .switch-label::after {
+            background: none;
+        }
+
+        .switch-label::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            inset: 0;
+            border-radius: 100px;
+            width: calc(100% + var(--border-width));
+            height: calc(100% + var(--border-width));
+            top: calc(0% - var(--border-width) / 2);
+            left: calc(0% - var(--border-width) / 2);
+            padding: var(--border-width);
+            box-sizing: border-box;
+            background: conic-gradient(
+                    from var(--angle-1) at 50% 50%,
+                    rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0) 5% 40%,
+                    rgba(0, 0, 0, 0.5) 50%,
+                    rgba(0, 0, 0, 0) 60% 95%,
+                    rgba(0, 0, 0, 0.5)
+            ),
+            linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask-composite: exclude;
+            transition: all var(--anim--hover-time) var(--anim--hover-ease),
+            --angle-1 500ms ease;
+            box-shadow: inset 0 0 0 calc(var(--border-width) / 2) rgba(255, 255, 255, 0.5);
+        }
+
+        .switch-container:hover .switch-label {
             transform: scale(0.975);
             backdrop-filter: blur(0.01em);
             -webkit-backdrop-filter: blur(0.01em);
@@ -635,6 +719,38 @@
             0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
             0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
             0 0 0 0 rgba(255, 255, 255, 1);
+        }
+
+        .switch-container:hover .switch-label::before {
+            --angle-1: -125deg;
+        }
+
+        .switch-checkbox:active ~ .switch-label::before {
+            --angle-1: -75deg;
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .switch-label::before,
+            .switch-container:hover .switch-label::before,
+            .switch-checkbox:active ~ .switch-label::before {
+                --angle-1: -75deg;
+            }
+        }
+
+        .switch-container:hover .switch-label::after {
+            background-position: 25% 50%;
+        }
+
+        .switch-checkbox:active ~ .switch-label::after {
+            background-position: 50% 15%;
+            --angle-2: -15deg;
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .switch-label::after,
+            .switch-checkbox:active ~ .switch-label::after {
+                --angle-2: -45deg;
+            }
         }
 
         .switch-bulb-icon {
