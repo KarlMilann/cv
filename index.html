@@ -1,946 +1,1699 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<title>Karl-Milann LOBIR — Senior Fullstack Developer & Tech Lead</title>
-<meta name="description" content="Senior Fullstack Developer & Tech Lead based in Lisbon. React, Remix, Django, LangGraph. 8+ years shipping production AI, fintech & Web3 platforms. Open to remote opportunities."/>
+    <title>Karl-Milann LOBIR — Senior Fullstack Developer & Tech Lead</title>
+    <meta
+      name="description"
+      content="Senior Fullstack Developer & Tech Lead based in Lisbon. React, Remix, Django, LangGraph. 8+ years shipping production AI, fintech & Web3 platforms. Open to remote opportunities."
+    />
 
-<!-- Open Graph for LinkedIn / Slack previews -->
-<meta property="og:title" content="Karl-Milann LOBIR — Senior Fullstack Developer & Tech Lead"/>
-<meta property="og:description" content="Fullstack · Tech Lead · React / Remix / Django / LangGraph · Lisbon · Remote"/>
-<meta property="og:url" content="https://karlmilann.github.io/cv/"/>
-<meta property="og:type" content="profile"/>
-<meta name="twitter:card" content="summary_large_image"/>
+    <!-- Open Graph for LinkedIn / Slack previews -->
+    <meta
+      property="og:title"
+      content="Karl-Milann LOBIR — Senior Fullstack Developer & Tech Lead"
+    />
+    <meta
+      property="og:description"
+      content="Fullstack · Tech Lead · React / Remix / Django / LangGraph · Lisbon · Remote"
+    />
+    <meta property="og:url" content="https://karlmilann.github.io/cv/" />
+    <meta property="og:type" content="profile" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-<style>
-:root {
-  --unchecked-color: #A29BA4;
-  --checked-color: #fc6453c7;
-  --checked-shadow: #fc645321;
-  --accent-color: #157ad9;
-  --accent-warm: #fc6453;
-  --global--size: clamp(2rem, 4vw, 5rem);
-  --anim--hover-time: 250ms;
-  --anim--hover-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --border-width: clamp(0.5px, 0.03125em, 2px);
-  --glass-bg-light: rgba(255, 255, 255, 0.1);
-  --glass-bg-dark: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-shadow: rgba(0, 0, 0, 0.1);
-  --glass-blur: 20px;
-}
+    <style>
+      :root {
+        --unchecked-color: #a29ba4;
+        --checked-color: #fc6453c7;
+        --checked-shadow: #fc645321;
+        --accent-color: #157ad9;
+        --accent-warm: #fc6453;
+        --global--size: clamp(2rem, 4vw, 5rem);
+        --anim--hover-time: 250ms;
+        --anim--hover-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        --border-width: clamp(0.5px, 0.03125em, 2px);
+        --glass-bg-light: rgba(255, 255, 255, 0.1);
+        --glass-bg-dark: rgba(255, 255, 255, 0.05);
+        --glass-border: rgba(255, 255, 255, 0.2);
+        --glass-shadow: rgba(0, 0, 0, 0.1);
+        --glass-blur: 20px;
+      }
 
-@property --angle-1 { syntax: "<angle>"; inherits: false; initial-value: -75deg; }
-@property --angle-2 { syntax: "<angle>"; inherits: false; initial-value: -45deg; }
+      @property --angle-1 {
+        syntax: "<angle>";
+        inherits: false;
+        initial-value: -75deg;
+      }
+      @property --angle-2 {
+        syntax: "<angle>";
+        inherits: false;
+        initial-value: -45deg;
+      }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+      body {
+        margin: 0;
+        padding: 0;
+        font-family:
+          "SF Pro Display",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          system-ui,
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
 
-.dark {
-  background: radial-gradient(ellipse at center,
-    rgba(20, 35, 45, 0.95),
-    rgba(15, 25, 35, 0.98),
-    rgba(10, 20, 30, 1));
-  color: rgba(255, 255, 255, 0.9);
-  min-height: 100vh;
-}
+      .dark {
+        background: radial-gradient(
+          ellipse at center,
+          rgba(20, 35, 45, 0.95),
+          rgba(15, 25, 35, 0.98),
+          rgba(10, 20, 30, 1)
+        );
+        color: rgba(255, 255, 255, 0.9);
+        min-height: 100vh;
+      }
 
-.light {
-  background: #fff;
-  color: #222;
-  min-height: 100vh;
-}
-.light code { background: #eaeaea; color: #222; }
+      .light {
+        background: #fff;
+        color: #222;
+        min-height: 100vh;
+      }
+      .light code {
+        background: #eaeaea;
+        color: #222;
+      }
 
-.container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: auto;
-}
+      .container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: auto;
+      }
 
-h1, h2, h3 { color: var(--accent-color); font-weight: 600; }
-h1, h2 { margin-top: 0; }
+      h1,
+      h2,
+      h3 {
+        color: var(--accent-color);
+        font-weight: 600;
+      }
+      h1,
+      h2 {
+        margin-top: 0;
+      }
 
-a {
-  color: var(--accent-color);
-  text-decoration: none;
-  transition: all var(--anim--hover-time) var(--anim--hover-ease);
-}
-a:hover { opacity: 0.8; }
+      a,
+      #copyEmailButton svg {
+        color: var(--accent-color);
+        text-decoration: none;
+        transition: all var(--anim--hover-time) var(--anim--hover-ease);
+      }
+      #copyEmailButton svg,
+      #copyEmailButtonMobile svg {
+        fill: var(--accent-color);
+      }
+      a:hover {
+        opacity: 0.8;
+      }
 
-.section {
-  position: relative;
-  margin-bottom: 2rem;
-  padding: 32px;
-  border-radius: 24px;
-  background: linear-gradient(135deg,
-    var(--glass-bg-light) 0%,
-    transparent 50%,
-    var(--glass-bg-dark) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow:
-    0 4px 16px -4px rgba(0, 0, 0, 0.1),
-    0 8px 32px -8px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(var(--glass-blur)) saturate(1.2);
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.2);
-  transition: all var(--anim--hover-time) var(--anim--hover-ease);
-}
+      .section {
+        position: relative;
+        margin-bottom: 2rem;
+        padding: 32px;
+        border-radius: 24px;
+        background: linear-gradient(
+          135deg,
+          var(--glass-bg-light) 0%,
+          transparent 50%,
+          var(--glass-bg-dark) 100%
+        );
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow:
+          0 4px 16px -4px rgba(0, 0, 0, 0.1),
+          0 8px 32px -8px rgba(0, 0, 0, 0.08),
+          inset 0 1px 0 rgba(255, 255, 255, 0.15),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(var(--glass-blur)) saturate(1.2);
+        -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.2);
+        transition: all var(--anim--hover-time) var(--anim--hover-ease);
+      }
 
-.section:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 6px 24px -6px rgba(0, 0, 0, 0.12),
-    0 12px 48px -12px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.08);
-}
+      .section:hover {
+        transform: translateY(-2px);
+        box-shadow:
+          0 6px 24px -6px rgba(0, 0, 0, 0.12),
+          0 12px 48px -12px rgba(0, 0, 0, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.2),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.08);
+      }
 
-.section:not(:is(.mobile-header)) { display: grid; }
+      .section:not(:is(.mobile-header)) {
+        display: grid;
+      }
 
-.job {
-  transition: all var(--anim--hover-time) var(--anim--hover-ease);
-  display: inline-block;
-  padding-top: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-}
-.job:first-of-type { border-top: none; padding-top: 0; }
+      .job {
+        transition: all var(--anim--hover-time) var(--anim--hover-ease);
+        display: inline-block;
+        padding-top: 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      .job:first-of-type {
+        border-top: none;
+        padding-top: 0;
+      }
 
-.section .job:hover,
-.section .job:hover ~ .job,
-.section .job:hover + .job { filter: none; }
+      .section .job:hover,
+      .section .job:hover ~ .job,
+      .section .job:hover + .job {
+        filter: none;
+      }
 
-.dark .section:hover .job:not(:hover) { filter: brightness(0.7) contrast(0.8); }
-.light .section:hover .job:not(:hover) { filter: opacity(0.5) contrast(0.9); }
-.job:hover { scale: 1.02; filter: brightness(1.05); }
+      .dark .section:hover .job:not(:hover) {
+        filter: brightness(0.7) contrast(0.8);
+      }
+      .light .section:hover .job:not(:hover) {
+        filter: opacity(0.5) contrast(0.9);
+      }
+      .job:hover {
+        scale: 1.02;
+        filter: brightness(1.05);
+      }
 
-.section li,
-.section p,
-.section a,
-.section table,
-.section .job,
-.section h1,
-.section h2 {
-  position: relative;
-  display: block;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif;
-  letter-spacing: -0.01em;
-  font-weight: 500;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  transition: all var(--anim--hover-time) var(--anim--hover-ease);
-}
+      .section li,
+      .section p,
+      .section a,
+      .section table,
+      .section .job,
+      .section h1,
+      .section h2 {
+        position: relative;
+        display: block;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter",
+          sans-serif;
+        letter-spacing: -0.01em;
+        font-weight: 500;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        transition: all var(--anim--hover-time) var(--anim--hover-ease);
+      }
 
-.section table { display: table; }
-.section a { display: unset; }
-.section li, .section p { font-size: 16px; line-height: 1.6; }
-.light .section { background: #ffffff33; }
+      .section table {
+        display: table;
+      }
+      .section a {
+        display: unset;
+      }
+      .section li,
+      .section p,
+      .section a {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      .light .section {
+        background: #ffffff33;
+      }
 
-.right-column { padding-left: 2rem; }
-.skills, .interests, .languages, ul { list-style: none; padding-left: 0; }
-.skills li, .interests li, .languages li { margin-bottom: 0.5rem; }
+      .right-column {
+        padding-left: 2rem;
+      }
+      .skills,
+      .interests,
+      .languages,
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      .skills li,
+      .interests li,
+      .languages li {
+        margin-bottom: 0.5rem;
+      }
 
-code {
-  background-color: #333;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 0.9em;
-}
+      code {
+        background-color: #333;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.9em;
+      }
 
-.job ul li:not(:last-child) { margin-bottom: 4px; }
-* { transition: all var(--anim--hover-time) var(--anim--hover-ease); }
-.dark .job ul li p { color: rgb(173, 173, 173); }
-.light .job ul li p { color: #222222; }
+      .job ul li:not(:last-child) {
+        margin-bottom: 4px;
+      }
+      * {
+        transition: all var(--anim--hover-time) var(--anim--hover-ease);
+      }
+      .dark .job ul li p {
+        color: rgb(173, 173, 173);
+      }
+      .light .job ul li p {
+        color: #222222;
+      }
 
-.job-title { font-weight: 700; margin-top: 4px; font-size: 1.05em; }
-.job-subtitle { font-style: italic; opacity: 0.85; }
-.job-period { font-size: 0.9em; opacity: 0.7; font-weight: 400; }
+      .job-title {
+        font-weight: 700;
+        margin-top: 4px;
+        font-size: 1.05em;
+      }
+      .job-subtitle {
+        font-style: italic;
+        opacity: 0.85;
+      }
+      .job-period {
+        font-size: 0.9em;
+        opacity: 0.7;
+        font-weight: 400;
+      }
 
-.highlight { color: white; font-weight: bold; }
-.light .highlight { color: #222; }
+      .highlight {
+        color: white;
+        font-weight: bold;
+      }
+      .light .highlight {
+        color: #222;
+      }
 
-.tagline {
-  font-size: 1.05em;
-  line-height: 1.6;
-  margin-top: 8px;
-  opacity: 0.92;
-}
+      .tagline {
+        font-size: 1.05em;
+        line-height: 1.6;
+        margin-top: 8px;
+        opacity: 0.92;
+      }
 
-table { width: 100%; border-collapse: collapse; }
-th {
-  text-align: left;
-  color: var(--accent-color);
-  font-size: 1rem;
-  padding-bottom: 0.5rem;
-  padding-right: 12px;
-  font-weight: 600;
-}
-td {
-  vertical-align: top;
-  padding: 0.4rem 12px 0.4rem 0;
-  font-size: 14px;
-  line-height: 1.5;
-}
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th {
+        text-align: left;
+        color: var(--accent-color);
+        font-size: 1rem;
+        padding-bottom: 0.5rem;
+        padding-right: 12px;
+        font-weight: 600;
+      }
+      td {
+        vertical-align: top;
+        padding: 0.4rem 12px 0.4rem 0;
+        font-size: 14px;
+        line-height: 1.5;
+      }
 
-.skills-table td { font-size: 13.5px; }
+      .skills-table td {
+        font-size: 16px;
+      }
 
-.metric {
-  display: inline-block;
-  font-weight: 700;
-  color: var(--accent-warm);
-}
-.light .metric { color: var(--accent-warm); }
+      .metric {
+        display: inline-block;
+        font-weight: 700;
+        color: var(--accent-warm);
+      }
+      .light .metric {
+        color: var(--accent-warm);
+      }
 
-.light p:has(.highlight), .light p:has(code) { color: #222; }
+      .light p:has(.highlight),
+      .light p:has(code) {
+        color: #222;
+      }
 
-/* ========== BUTTON ========== */
-.button-wrap {
-  position: fixed;
-  top: 48px;
-  right: 20px;
-  z-index: 200;
-  border-radius: 999vw;
-  background: transparent;
-  pointer-events: auto;
-  transition: all var(--anim--hover-time) var(--anim--hover-ease);
-}
+      /* ========== BUTTON ========== */
+      .button-wrap {
+        position: fixed;
+        top: 48px;
+        right: 20px;
+        z-index: 200;
+        border-radius: 999vw;
+        background: transparent;
+        pointer-events: auto;
+        transition: all var(--anim--hover-time) var(--anim--hover-ease);
+      }
 
-.button-shadow {
-  --shadow-cuttoff-fix: 2em;
-  position: absolute;
-  width: calc(100% + var(--shadow-cuttoff-fix));
-  height: calc(100% + var(--shadow-cuttoff-fix));
-  top: calc(0% - var(--shadow-cuttoff-fix) / 2);
-  left: calc(0% - var(--shadow-cuttoff-fix) / 2);
-  filter: blur(clamp(2px, 0.125em, 12px));
-  -webkit-filter: blur(clamp(2px, 0.125em, 12px));
-  -moz-filter: blur(clamp(2px, 0.125em, 12px));
-  -ms-filter: blur(clamp(2px, 0.125em, 12px));
-  overflow: visible;
-  pointer-events: auto;
-}
+      .button-shadow {
+        --shadow-cuttoff-fix: 2em;
+        position: absolute;
+        width: calc(100% + var(--shadow-cuttoff-fix));
+        height: calc(100% + var(--shadow-cuttoff-fix));
+        top: calc(0% - var(--shadow-cuttoff-fix) / 2);
+        left: calc(0% - var(--shadow-cuttoff-fix) / 2);
+        filter: blur(clamp(2px, 0.125em, 12px));
+        -webkit-filter: blur(clamp(2px, 0.125em, 12px));
+        -moz-filter: blur(clamp(2px, 0.125em, 12px));
+        -ms-filter: blur(clamp(2px, 0.125em, 12px));
+        overflow: visible;
+        pointer-events: auto;
+      }
 
-.button-shadow::after {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  inset: 0;
-  border-radius: 999vw;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
-  width: calc(100% - var(--shadow-cuttoff-fix) - 0.15em);
-  height: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
-  top: calc(var(--shadow-cuttoff-fix) - 0.6em);
-  left: calc(var(--shadow-cuttoff-fix) - 0.99em);
-  padding: 0.125em;
-  box-sizing: border-box;
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  transition: all var(--anim--hover-time) var(--anim--hover-ease);
-  overflow: visible;
-  opacity: 1;
-}
+      .button-shadow::after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        inset: 0;
+        border-radius: 999vw;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.1)
+        );
+        width: calc(100% - var(--shadow-cuttoff-fix) - 0.15em);
+        height: calc(100% - var(--shadow-cuttoff-fix) - 0.25em);
+        top: calc(var(--shadow-cuttoff-fix) - 0.6em);
+        left: calc(var(--shadow-cuttoff-fix) - 0.99em);
+        padding: 0.125em;
+        box-sizing: border-box;
+        mask:
+          linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+        mask-composite: exclude;
+        transition: all var(--anim--hover-time) var(--anim--hover-ease);
+        overflow: visible;
+        opacity: 1;
+      }
 
-.section > .button-shadow::after {
-  border-radius: 22px;
-}
+      .section > .button-shadow::after {
+        border-radius: 22px;
+      }
 
-#saveAsPdfButton {
-  position: relative;
-  top: 4px;
-  right: 0;
-  padding: 10px 20px;
-  display: inline-block;
-  color: white;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  pointer-events: auto;
-  z-index: 3;
-  background: linear-gradient(
-    -75deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.05)
-  );
-  box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-    0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-    0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-    0 0 0 0 rgba(255, 255, 255, 1);
-  border-radius: 999vw;
-  backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-  -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-  -moz-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-  -ms-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-  transition: all var(--anim--hover-time) var(--anim--hover-ease);
-}
+      #saveAsPdfButton {
+        position: relative;
+        top: 4px;
+        right: 0;
+        padding: 10px 20px;
+        display: inline-block;
+        color: white;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        pointer-events: auto;
+        z-index: 3;
+        background: linear-gradient(
+          -75deg,
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0.2),
+          rgba(255, 255, 255, 0.05)
+        );
+        box-shadow:
+          inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+          inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+          0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+          0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
+          0 0 0 0 rgba(255, 255, 255, 1);
+        border-radius: 999vw;
+        backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+        -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+        -moz-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+        -ms-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+        transition: all var(--anim--hover-time) var(--anim--hover-ease);
+      }
 
-#saveAsPdfButton:hover {
-  transform: scale(0.975);
-  backdrop-filter: blur(0.01em);
-  -webkit-backdrop-filter: blur(0.01em);
-  -moz-backdrop-filter: blur(0.01em);
-  -ms-backdrop-filter: blur(0.01em);
-  box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-    0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
-    0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
-    0 0 0 0 rgba(255, 255, 255, 1);
-}
+      #saveAsPdfButton:hover {
+        transform: scale(0.975);
+        backdrop-filter: blur(0.01em);
+        -webkit-backdrop-filter: blur(0.01em);
+        -moz-backdrop-filter: blur(0.01em);
+        -ms-backdrop-filter: blur(0.01em);
+        box-shadow:
+          inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+          inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+          0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
+          0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
+          0 0 0 0 rgba(255, 255, 255, 1);
+      }
 
-#saveAsPdfButton span {
-  position: relative;
-  display: block;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  font-family: "Inter", sans-serif;
-  letter-spacing: -0.05em;
-  font-weight: 500;
-  font-size: 12px;
-  color: #e0e0e0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-shadow: 0em 0.25em 0.05em rgba(0, 0, 0, 0.1);
-  transition: all var(--anim--hover-time) var(--anim--hover-ease);
-}
+      #saveAsPdfButton span {
+        position: relative;
+        display: block;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        font-family: "Inter", sans-serif;
+        letter-spacing: -0.05em;
+        font-weight: 500;
+        font-size: 12px;
+        color: #e0e0e0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-shadow: 0em 0.25em 0.05em rgba(0, 0, 0, 0.1);
+        transition: all var(--anim--hover-time) var(--anim--hover-ease);
+      }
 
-.light #saveAsPdfButton span { color: rgba(50, 50, 50, 1); }
+      .light #saveAsPdfButton span {
+        color: rgba(50, 50, 50, 1);
+      }
 
-#saveAsPdfButton:hover span {
-  text-shadow: 0.025em 0.025em 0.025em rgba(0, 0, 0, 0.12);
-}
+      #saveAsPdfButton:hover span {
+        text-shadow: 0.025em 0.025em 0.025em rgba(0, 0, 0, 0.12);
+      }
 
-#saveAsPdfButton span::after {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: 1;
-  width: calc(100% - var(--border-width));
-  height: calc(100% - var(--border-width));
-  top: calc(0% + var(--border-width) / 2);
-  left: calc(0% + var(--border-width) / 2);
-  box-sizing: border-box;
-  border-radius: 999vw;
-  overflow: clip;
-  background: linear-gradient(
-    var(--angle-2),
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.5) 40% 50%,
-    rgba(255, 255, 255, 0) 55%
-  );
-  z-index: 3;
-  mix-blend-mode: screen;
-  pointer-events: auto;
-  background-size: 200% 200%;
-  background-position: 0% 50%;
-  background-repeat: no-repeat;
-  transition: background-position calc(var(--anim--hover-time) * 1.25) var(--anim--hover-ease),
-    --angle-2 calc(var(--anim--hover-time) * 1.25) var(--anim--hover-ease);
-}
+      #saveAsPdfButton span::after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 1;
+        width: calc(100% - var(--border-width));
+        height: calc(100% - var(--border-width));
+        top: calc(0% + var(--border-width) / 2);
+        left: calc(0% + var(--border-width) / 2);
+        box-sizing: border-box;
+        border-radius: 999vw;
+        overflow: clip;
+        background: linear-gradient(
+          var(--angle-2),
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.5) 40% 50%,
+          rgba(255, 255, 255, 0) 55%
+        );
+        z-index: 3;
+        mix-blend-mode: screen;
+        pointer-events: auto;
+        background-size: 200% 200%;
+        background-position: 0% 50%;
+        background-repeat: no-repeat;
+        transition:
+          background-position calc(var(--anim--hover-time) * 1.25)
+            var(--anim--hover-ease),
+          --angle-2 calc(var(--anim--hover-time) * 1.25) var(--anim--hover-ease);
+      }
 
-.dark #saveAsPdfButton span::after { background: none; }
+      .dark #saveAsPdfButton span::after {
+        background: none;
+      }
 
-#saveAsPdfButton:hover span::after { background-position: 25% 50%; }
+      #saveAsPdfButton:hover span::after {
+        background-position: 25% 50%;
+      }
 
-#saveAsPdfButton:active span::after {
-  background-position: 50% 15%;
-  --angle-2: -15deg;
-}
+      #saveAsPdfButton:active span::after {
+        background-position: 50% 15%;
+        --angle-2: -15deg;
+      }
 
-@media (hover: none) and (pointer: coarse) {
-  #saveAsPdfButton span::after,
-  #saveAsPdfButton:active span::after {
-    --angle-2: -45deg;
-  }
-}
+      @media (hover: none) and (pointer: coarse) {
+        #saveAsPdfButton span::after,
+        #saveAsPdfButton:active span::after {
+          --angle-2: -45deg;
+        }
+      }
 
-#saveAsPdfButton::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  border-radius: 999vw;
-  width: calc(100% + var(--border-width));
-  height: calc(100% + var(--border-width));
-  top: calc(0% - var(--border-width) / 2);
-  left: calc(0% - var(--border-width) / 2);
-  padding: var(--border-width);
-  box-sizing: border-box;
-  background: conic-gradient(
-      from var(--angle-1) at 50% 50%,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0) 5% 40%,
-      rgba(0, 0, 0, 0.5) 50%,
-      rgba(0, 0, 0, 0) 60% 95%,
-      rgba(0, 0, 0, 0.5)
-    ),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  transition: all var(--anim--hover-time) var(--anim--hover-ease),
-    --angle-1 500ms ease;
-  box-shadow: inset 0 0 0 calc(var(--border-width) / 2) rgba(255, 255, 255, 0.5);
-}
+      #saveAsPdfButton::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        inset: 0;
+        border-radius: 999vw;
+        width: calc(100% + var(--border-width));
+        height: calc(100% + var(--border-width));
+        top: calc(0% - var(--border-width) / 2);
+        left: calc(0% - var(--border-width) / 2);
+        padding: var(--border-width);
+        box-sizing: border-box;
+        background:
+          conic-gradient(
+            from var(--angle-1) at 50% 50%,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0) 5% 40%,
+            rgba(0, 0, 0, 0.5) 50%,
+            rgba(0, 0, 0, 0) 60% 95%,
+            rgba(0, 0, 0, 0.5)
+          ),
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)
+          );
+        mask:
+          linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+        mask-composite: exclude;
+        transition:
+          all var(--anim--hover-time) var(--anim--hover-ease),
+          --angle-1 500ms ease;
+        box-shadow: inset 0 0 0 calc(var(--border-width) / 2)
+          rgba(255, 255, 255, 0.5);
+      }
 
-#saveAsPdfButton:hover::after { --angle-1: -125deg; }
-#saveAsPdfButton:active::after { --angle-1: -75deg; }
+      #saveAsPdfButton:hover::after {
+        --angle-1: -125deg;
+      }
+      #saveAsPdfButton:active::after {
+        --angle-1: -75deg;
+      }
 
-@media (hover: none) and (pointer: coarse) {
-  #saveAsPdfButton::after,
-  #saveAsPdfButton:hover::after,
-  #saveAsPdfButton:active::after {
-    --angle-1: -75deg;
-  }
-}
+      @media (hover: none) and (pointer: coarse) {
+        #saveAsPdfButton::after,
+        #saveAsPdfButton:hover::after,
+        #saveAsPdfButton:active::after {
+          --angle-1: -75deg;
+        }
+      }
 
-.button-wrap:has(#saveAsPdfButton:active) {
-  transform: rotate3d(1, 0, 0, 25deg);
-}
+      .button-wrap:has(#saveAsPdfButton:active) {
+        transform: rotate3d(1, 0, 0, 25deg);
+      }
 
-#saveAsPdfButton { z-index: 9999 !important; pointer-events: auto !important; }
-#saveAsPdfButton::after,
-#saveAsPdfButton span::after,
-.button-shadow { pointer-events: none !important; }
+      #saveAsPdfButton {
+        z-index: 9999 !important;
+        pointer-events: auto !important;
+      }
+      #saveAsPdfButton::after,
+      #saveAsPdfButton span::after,
+      .button-shadow {
+        pointer-events: none !important;
+      }
 
-@media print {
-  @page { margin: 1cm; }
-  #saveAsPdfButtonContainer, #toast, .switch-container { display: none !important; }
-  * {
-    color: #222 !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    transition: none !important;
-  }
-  body { background: white !important; }
-  .container {
-    grid-template-columns: 1fr !important;
-    gap: 0.5rem !important;
-    padding: 0.5rem !important;
-    max-width: 100% !important;
-  }
-  .right-column { border-left: none !important; padding-left: 0 !important; }
-  .mobile-header { display: block !important; }
-  .desktop-header { display: none !important; }
-  .section {
-    overflow: visible !important;
-    transform: none !important;
-    box-shadow: none !important;
-    border: 1px solid #ddd !important;
-    background: white !important;
-    padding: 12px !important;
-    margin-bottom: 0.4rem !important;
-    border-radius: 8px !important;
-    break-inside: auto;
-  }
-  .button-shadow { display: none !important; }
-  .job,
-  .dark .section:hover .job:not(:hover),
-  .light .section:hover .job:not(:hover) {
-    filter: none !important;
-    opacity: 1 !important;
-    scale: 1 !important;
-  }
-  .job { display: block !important; overflow: visible !important; break-inside: auto; }
-  .metric { color: #222 !important; font-weight: 700 !important; }
-}
+      @media print {
+        @page {
+          margin: 1cm;
+        }
+        #saveAsPdfButtonContainer,
+        #toast,
+        .switch-container {
+          display: none !important;
+        }
+        * {
+          color: #222 !important;
+          backdrop-filter: none !important;
+          -webkit-backdrop-filter: none !important;
+          transition: none !important;
+        }
+        body {
+          background: white !important;
+        }
+        .container {
+          grid-template-columns: 1fr !important;
+          gap: 0.5rem !important;
+          padding: 0.5rem !important;
+          max-width: 100% !important;
+        }
+        .right-column {
+          border-left: none !important;
+          padding-left: 0 !important;
+        }
+        .mobile-header {
+          display: block !important;
+        }
+        .desktop-header {
+          display: none !important;
+        }
+        .section {
+          overflow: visible !important;
+          transform: none !important;
+          box-shadow: none !important;
+          border: 1px solid #ddd !important;
+          background: white !important;
+          padding: 12px !important;
+          margin-bottom: 0.4rem !important;
+          border-radius: 8px !important;
+          break-inside: auto;
+        }
+        .button-shadow {
+          display: none !important;
+        }
+        .job,
+        .dark .section:hover .job:not(:hover),
+        .light .section:hover .job:not(:hover) {
+          filter: none !important;
+          opacity: 1 !important;
+          scale: 1 !important;
+        }
+        .job {
+          display: block !important;
+          overflow: visible !important;
+          break-inside: auto;
+        }
+        .metric {
+          color: #222 !important;
+          font-weight: 700 !important;
+        }
+      }
 
-#copyEmailButton svg:hover, #copyEmailButtonMobile svg:hover { fill: #ffaa00; transition: fill 0.2s; }
+      #copyEmailButton svg:hover,
+      #copyEmailButtonMobile svg:hover {
+        fill: var(--accent-warm);
+        transition: fill 0.2s;
+      }
 
-#toast {
-  position: fixed;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%) translateY(-40px);
-  min-width: 120px;
-  background: linear-gradient(-75deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.05));
-  box-shadow:
-    inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-    0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-    0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
-  color: #fff;
-  text-align: center;
-  border-radius: 32px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 9999;
-  transition: opacity 0.4s, transform 0.4s;
-}
-.light #toast { color: rgba(50, 50, 50, 1); }
-#toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+      #toast {
+        position: fixed;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-40px);
+        min-width: 120px;
+        background: linear-gradient(
+          -75deg,
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0.2),
+          rgba(255, 255, 255, 0.05)
+        );
+        box-shadow:
+          inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+          inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+          0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+          0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(8px);
+        color: #fff;
+        text-align: center;
+        border-radius: 32px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 9999;
+        transition:
+          opacity 0.4s,
+          transform 0.4s;
+      }
+      .light #toast {
+        color: rgba(50, 50, 50, 1);
+      }
+      #toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
 
-.switch-container {
-  position: fixed;
-  top: 24px;
-  right: 20px;
-  width: 54px;
-  height: 24px;
-  z-index: 200;
-}
-.switch-checkbox {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-  z-index: 100;
-  cursor: pointer;
-}
-.switch-label {
-  height: 24px;
-  width: 54px;
-  border-radius: 100px;
-  display: block;
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(
-    -75deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.05)
-  );
-  box-shadow:
-    inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-    0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-    0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-    0 0 0 0 rgba(255, 255, 255, 1);
-  backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-  -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-  -moz-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-  -ms-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
-  transition: all var(--anim--hover-time) var(--anim--hover-ease);
-}
-.switch-label::after {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: 3;
-  width: calc(100% - var(--border-width));
-  height: calc(100% - var(--border-width));
-  top: calc(0% + var(--border-width) / 2);
-  left: calc(0% + var(--border-width) / 2);
-  box-sizing: border-box;
-  border-radius: 100px;
-  overflow: clip;
-  background: linear-gradient(
-    var(--angle-2),
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.5) 40% 50%,
-    rgba(255, 255, 255, 0) 55%
-  );
-  mix-blend-mode: screen;
-  pointer-events: none;
-  background-size: 200% 200%;
-  background-position: 0% 50%;
-  background-repeat: no-repeat;
-  transition:
-    background-position calc(var(--anim--hover-time) * 1.25) var(--anim--hover-ease),
-    --angle-2 calc(var(--anim--hover-time) * 1.25) var(--anim--hover-ease);
-}
-.dark .switch-label::after { background: none; }
-.switch-label::before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  border-radius: 100px;
-  width: calc(100% + var(--border-width));
-  height: calc(100% + var(--border-width));
-  top: calc(0% - var(--border-width) / 2);
-  left: calc(0% - var(--border-width) / 2);
-  padding: var(--border-width);
-  box-sizing: border-box;
-  background: conic-gradient(
-    from var(--angle-1) at 50% 50%,
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0) 5% 40%,
-    rgba(0, 0, 0, 0.5) 50%,
-    rgba(0, 0, 0, 0) 60% 95%,
-    rgba(0, 0, 0, 0.5)
-  ),
-  linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  transition: all var(--anim--hover-time) var(--anim--hover-ease), --angle-1 500ms ease;
-  box-shadow: inset 0 0 0 calc(var(--border-width) / 2) rgba(255, 255, 255, 0.5);
-}
-.switch-container:hover .switch-label {
-  transform: scale(0.975);
-  backdrop-filter: blur(0.01em);
-  -webkit-backdrop-filter: blur(0.01em);
-  -moz-backdrop-filter: blur(0.01em);
-  -ms-backdrop-filter: blur(0.01em);
-  box-shadow:
-    inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-    0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
-    0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
-    0 0 0 0 rgba(255, 255, 255, 1);
-}
-.switch-container:hover .switch-label::before { --angle-1: -125deg; }
-.switch-checkbox:active ~ .switch-label::before { --angle-1: -75deg; }
-@media (hover: none) and (pointer: coarse) {
-  .switch-label::before,
-  .switch-container:hover .switch-label::before,
-  .switch-checkbox:active ~ .switch-label::before { --angle-1: -75deg; }
-}
-.switch-container:hover .switch-label::after { background-position: 25% 50%; }
-.switch-checkbox:active ~ .switch-label::after {
-  background-position: 50% 15%;
-  --angle-2: -15deg;
-}
-@media (hover: none) and (pointer: coarse) {
-  .switch-label::after,
-  .switch-checkbox:active ~ .switch-label::after { --angle-2: -45deg; }
-}
-.switch-bulb-icon {
-  height: 12px;
-  width: 12px;
-  background: linear-gradient(
-    -75deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.05)
-  );
-  border-radius: 50%;
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  display: block;
-  transition: 0.7s;
-  box-shadow:
-    inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-    0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-    0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-    0 0 0 0 rgba(255, 255, 255, 1);
-}
-.switch-bulb-center {
-  position: absolute;
-  display: block;
-  height: 16px;
-  width: 16px;
-  background: linear-gradient(
-    -75deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.05)
-  );
-  box-shadow:
-    inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-    0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-    0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-    0 0 0 0 rgba(255, 255, 255, 1);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transition: 0.7s;
-  transform: translate(-50%, -50%);
-}
-.switch-bulb-center::after {
-  content: "";
-  display: block;
-  height: 14px;
-  width: 14px;
-  background: linear-gradient(
-    -75deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.05)
-  );
-  box-shadow:
-    inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
-    inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
-    0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
-    0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
-    0 0 0 0 rgba(255, 255, 255, 1);
-  border-radius: 50%;
-  position: absolute;
-  transition: 0.7s;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.switch-checkbox:checked ~ .switch-label .switch-bulb-icon {
-  left: 35px;
-  background: linear-gradient(-75deg, #fc64538f, #fc6453a1, #fc645300);
-}
-.switch-checkbox:checked ~ .switch-label .switch-bulb-icon > .switch-bulb-center {
-  background: linear-gradient(-75deg, #fc6453b8, #fc64534d, #fc6453);
-}
-.switch-checkbox:checked ~ .switch-label .switch-bulb-icon > .switch-bulb-center::after {
-  background: linear-gradient(-75deg, #fc64538f, #fc6453a1, #fc645369);
-}
+      .switch-container {
+        position: fixed;
+        top: 24px;
+        right: 20px;
+        width: 54px;
+        height: 24px;
+        z-index: 200;
+      }
+      .switch-checkbox {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        z-index: 100;
+        cursor: pointer;
+      }
+      .switch-label {
+        height: 24px;
+        width: 54px;
+        border-radius: 100px;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+          -75deg,
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0.2),
+          rgba(255, 255, 255, 0.05)
+        );
+        box-shadow:
+          inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+          inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+          0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+          0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
+          0 0 0 0 rgba(255, 255, 255, 1);
+        backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+        -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+        -moz-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+        -ms-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+        transition: all var(--anim--hover-time) var(--anim--hover-ease);
+      }
+      .switch-label::after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 3;
+        width: calc(100% - var(--border-width));
+        height: calc(100% - var(--border-width));
+        top: calc(0% + var(--border-width) / 2);
+        left: calc(0% + var(--border-width) / 2);
+        box-sizing: border-box;
+        border-radius: 100px;
+        overflow: clip;
+        background: linear-gradient(
+          var(--angle-2),
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.5) 40% 50%,
+          rgba(255, 255, 255, 0) 55%
+        );
+        mix-blend-mode: screen;
+        pointer-events: none;
+        background-size: 200% 200%;
+        background-position: 0% 50%;
+        background-repeat: no-repeat;
+        transition:
+          background-position calc(var(--anim--hover-time) * 1.25)
+            var(--anim--hover-ease),
+          --angle-2 calc(var(--anim--hover-time) * 1.25) var(--anim--hover-ease);
+      }
+      .dark .switch-label::after {
+        background: none;
+      }
+      .switch-label::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        inset: 0;
+        border-radius: 100px;
+        width: calc(100% + var(--border-width));
+        height: calc(100% + var(--border-width));
+        top: calc(0% - var(--border-width) / 2);
+        left: calc(0% - var(--border-width) / 2);
+        padding: var(--border-width);
+        box-sizing: border-box;
+        background:
+          conic-gradient(
+            from var(--angle-1) at 50% 50%,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0) 5% 40%,
+            rgba(0, 0, 0, 0.5) 50%,
+            rgba(0, 0, 0, 0) 60% 95%,
+            rgba(0, 0, 0, 0.5)
+          ),
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)
+          );
+        mask:
+          linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+        mask-composite: exclude;
+        transition:
+          all var(--anim--hover-time) var(--anim--hover-ease),
+          --angle-1 500ms ease;
+        box-shadow: inset 0 0 0 calc(var(--border-width) / 2)
+          rgba(255, 255, 255, 0.5);
+      }
+      .switch-container:hover .switch-label {
+        transform: scale(0.975);
+        backdrop-filter: blur(0.01em);
+        -webkit-backdrop-filter: blur(0.01em);
+        -moz-backdrop-filter: blur(0.01em);
+        -ms-backdrop-filter: blur(0.01em);
+        box-shadow:
+          inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+          inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+          0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25),
+          0 0 0.05em 0.1em inset rgba(255, 255, 255, 0.5),
+          0 0 0 0 rgba(255, 255, 255, 1);
+      }
+      .switch-container:hover .switch-label::before {
+        --angle-1: -125deg;
+      }
+      .switch-checkbox:active ~ .switch-label::before {
+        --angle-1: -75deg;
+      }
+      @media (hover: none) and (pointer: coarse) {
+        .switch-label::before,
+        .switch-container:hover .switch-label::before,
+        .switch-checkbox:active ~ .switch-label::before {
+          --angle-1: -75deg;
+        }
+      }
+      .switch-container:hover .switch-label::after {
+        background-position: 25% 50%;
+      }
+      .switch-checkbox:active ~ .switch-label::after {
+        background-position: 50% 15%;
+        --angle-2: -15deg;
+      }
+      @media (hover: none) and (pointer: coarse) {
+        .switch-label::after,
+        .switch-checkbox:active ~ .switch-label::after {
+          --angle-2: -45deg;
+        }
+      }
+      .switch-bulb-icon {
+        height: 12px;
+        width: 12px;
+        background: linear-gradient(
+          -75deg,
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0.2),
+          rgba(255, 255, 255, 0.05)
+        );
+        border-radius: 50%;
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        display: block;
+        transition: 0.7s;
+        box-shadow:
+          inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+          inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+          0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+          0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
+          0 0 0 0 rgba(255, 255, 255, 1);
+      }
+      .switch-bulb-center {
+        position: absolute;
+        display: block;
+        height: 16px;
+        width: 16px;
+        background: linear-gradient(
+          -75deg,
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0.2),
+          rgba(255, 255, 255, 0.05)
+        );
+        box-shadow:
+          inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+          inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+          0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+          0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
+          0 0 0 0 rgba(255, 255, 255, 1);
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transition: 0.7s;
+        transform: translate(-50%, -50%);
+      }
+      .switch-bulb-center::after {
+        content: "";
+        display: block;
+        height: 14px;
+        width: 14px;
+        background: linear-gradient(
+          -75deg,
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0.2),
+          rgba(255, 255, 255, 0.05)
+        );
+        box-shadow:
+          inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05),
+          inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.5),
+          0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2),
+          0 0 0.1em 0.25em inset rgba(255, 255, 255, 0.2),
+          0 0 0 0 rgba(255, 255, 255, 1);
+        border-radius: 50%;
+        position: absolute;
+        transition: 0.7s;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .switch-checkbox:checked ~ .switch-label .switch-bulb-icon {
+        left: 35px;
+        background: linear-gradient(-75deg, #fc64538f, #fc6453a1, #fc645300);
+      }
+      .switch-checkbox:checked
+        ~ .switch-label
+        .switch-bulb-icon
+        > .switch-bulb-center {
+        background: linear-gradient(-75deg, #fc6453b8, #fc64534d, #fc6453);
+      }
+      .switch-checkbox:checked
+        ~ .switch-label
+        .switch-bulb-icon
+        > .switch-bulb-center::after {
+        background: linear-gradient(-75deg, #fc64538f, #fc6453a1, #fc645369);
+      }
 
-.mobile-header { display: none; }
-.desktop-header { margin-top: 0; }
+      .mobile-header {
+        display: none;
+      }
+      .desktop-header {
+        margin-top: 0;
+      }
+      .desktop-header p {
+        white-space: nowrap;
+      }
+      .technical-mobile {
+        display: none !important;
+      }
 
-@media screen and (max-width: 768px) {
-  .mobile-header { display: block; }
-  .desktop-header { display: none !important; }
-  .container { grid-template-columns: 1fr; }
-  .right-column { border-left: none; padding-left: 0; }
-  .switch-container { top: 20px; right: 20px; }
-  #saveAsPdfButtonContainer { bottom: unset; top: 50px; right: 0; }
-  #saveAsPdfButton { top: 0; }
-  .skills-table { font-size: 12.5px; }
-  .skills-table th { font-size: 0.85rem; }
-}
-</style>
-</head>
-<body>
-
-<!-- Theme switch -->
-<div class="switch-container">
-  <input type="checkbox" id="switchInput" class="switch-checkbox"/>
-  <label for="switchInput" class="switch-label">
-    <span class="switch-bulb-icon">
-      <span class="switch-bulb-center"></span>
-    </span>
-  </label>
-  <div class="button-shadow"></div>
-</div>
-
-<!-- Save as PDF button -->
-<div class="button-wrap" id="saveAsPdfButtonContainer">
-  <button id="saveAsPdfButton" onclick="window.print()">
-    <span>Save as PDF</span>
-    <div class="button-shadow"></div>
-  </button>
-</div>
-
-<!-- Toast -->
-<div id="toast">Email copied</div>
-
-<div class="container">
-
-  <!-- ============ LEFT COLUMN ============ -->
-  <div class="left-column">
-
-    <!-- Mobile header -->
-    <section class="section mobile-header">
-      <h1>Karl-Milann <br><span class="highlight">LOBIR</span></h1>
-      <p class="tagline">Senior Fullstack Developer & Tech Lead — React · Remix · Django · LangGraph</p>
-      <p>📍 Lisbon, Portugal · Open to fully remote</p>
-      <a href="https://wa.me/qr/FOMDIPXDBFJQN1">📞 +33 6 95 84 86 07</a>
-      <p>✉️ <a href="mailto:karl-milann-henri.lobir@protonmail.com" id="emailLinkMobile">karl-milann-henri.lobir@protonmail.com</a>
-        <span id="copyEmailButtonMobile" style="cursor:pointer; vertical-align:middle; margin-left:8px;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="#00aaff" viewBox="0 0 24 24">
-            <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h11v16z"/>
-          </svg>
+      @media screen and (max-width: 768px) {
+        .section:last-child {
+          margin-bottom: 0;
+        }
+        .mobile-header {
+          display: block;
+        }
+        .desktop-header {
+          display: none !important;
+        }
+        .technical-mobile {
+          display: block !important;
+        }
+        .technical-desktop {
+          display: none !important;
+        }
+        .container {
+          grid-template-columns: 1fr;
+        }
+        .right-column {
+          border-left: none;
+          padding-left: 0;
+        }
+        .switch-container {
+          top: 20px;
+          right: 20px;
+        }
+        #saveAsPdfButtonContainer {
+          bottom: unset;
+          top: 50px;
+          right: 20px;
+        }
+        #saveAsPdfButton {
+          top: 0;
+        }
+        .skills-table {
+          font-size: 12.5px;
+        }
+        .skills-table th {
+          font-size: 1.25rem;
+        }
+        .mobile-header p:last-child {
+          position: relative;
+          line-break: anywhere;
+          width: fit-content;
+        }
+        .mobile-header p:last-child span {
+          position: absolute;
+          right: -16px;
+          top: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Theme switch -->
+    <div class="switch-container">
+      <input type="checkbox" id="switchInput" class="switch-checkbox" />
+      <label for="switchInput" class="switch-label">
+        <span class="switch-bulb-icon">
+          <span class="switch-bulb-center"></span>
         </span>
-      </p>
-    </section>
+      </label>
+      <div class="button-shadow"></div>
+    </div>
 
-    <!-- Summary -->
-    <section class="section">
-      <h2>Profile</h2>
-      <p class="tagline">
-        Fullstack engineer with <span class="metric">6+ years</span> of experience building production systems across fintech, AI/SaaS, and Web3.
-        Currently <span class="highlight">Tech Lead managing 8 engineers across 16 projects</span> at CA-GIP (Crédit Agricole Group).
-        Previously sole engineer on an AI coaching SaaS, owning the full stack from Django/LangGraph backends to React/Remix frontends.
-        Equally at ease with greenfield AI architecture and large-corp delivery constraints.
-      </p>
-    </section>
+    <!-- Save as PDF button -->
+    <div class="button-wrap" id="saveAsPdfButtonContainer">
+      <button id="saveAsPdfButton" onclick="window.print()">
+        <span>Save as PDF</span>
+        <div class="button-shadow"></div>
+      </button>
+    </div>
 
-    <!-- Experience -->
-    <section class="section">
-      <h2>Experience</h2>
+    <!-- Toast -->
+    <div id="toast">Email copied</div>
 
-      <div class="job">
-        <p class="job-title">Tech Lead — KLx / CA-GIP</p>
-        <p class="job-subtitle">NestJS · WeWeb · Power Apps · <span class="job-period">Nov 2025 — Present · Lisbon (remote)</span></p>
-        <ul>
-          <li><p>Lead a team of <span class="metric">8 engineers</span> delivering <span class="metric">16 concurrent projects</span> in a heavily regulated banking environment (Crédit Agricole Group).</p></li>
-          <li><p>Established the engineering baseline from scratch: code review workflow, branching conventions, documentation standards, and onboarding playbook — none existed before.</p></li>
-          <li><p>Built an <span class="highlight">internal roadmap-tracking tool</span> that pulls Jira tickets per project and renders the actual delivery flow as <code>Mermaid</code> diagrams — letting PMs visually compare the real progression against the planned roadmap and detect slippage early.</p></li>
-          <li><p>Co-designing an <span class="highlight">accessibility-first design system</span> with our designers, and authoring the matching coding norms so every team enforces a11y rules by default rather than as an afterthought.</p></li>
-          <li><p>Continuously challenge the existing design system — pushing back on decisions that hurt consistency or maintainability — and lead the migration toward the new accessible tokens and components.</p></li>
-          <li><p>Architect <code>NestJS</code> backend services and supervise <code>WeWeb</code> + <code>Power Apps</code> frontend delivery, balancing no-code velocity with maintainability.</p></li>
-          <li><p>Work alongside the DevOps team on <code>Kubernetes</code> deployments — authoring and adjusting manifests for service rollouts in the group infrastructure.</p></li>
-          <li><p>Drive client-facing technical discussions, translating business requirements into roadmaps across multiple stakeholders simultaneously.</p></li>
-        </ul>
+    <div class="container">
+      <!-- ============ LEFT COLUMN ============ -->
+      <div class="left-column">
+        <!-- Mobile header -->
+        <section class="section mobile-header">
+          <h1>Karl-Milann <br /><span class="highlight">LOBIR</span></h1>
+          <p class="tagline">
+            Senior Fullstack Developer & Tech Lead — React · Remix · Django ·
+            LangGraph
+          </p>
+          <p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="#EA4335"
+              style="vertical-align: middle; margin-right: 4px"
+            >
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+              />
+            </svg>
+            Lisbon, Portugal · Open to fully remote
+          </p>
+          <a href="https://wa.me/qr/FOMDIPXDBFJQN1"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="#25D366"
+              style="vertical-align: middle; margin-right: 4px"
+            >
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+              />
+            </svg>
+            +33 6 95 84 86 07</a
+          >
+          <p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="#6D4AFF"
+              style="vertical-align: middle; margin-right: 4px"
+            >
+              <path
+                d="M0 4.688C0 2.099 2.099 0 4.688 0h14.625C21.9 0 24 2.098 24 4.688v14.625C24 21.9 21.902 24 19.312 24H4.688C2.099 24 0 21.898 0 19.312V4.688zm12 .124L4.5 8.625v6.75L7.5 13.5V10.5l4.5-2.625L16.5 10.5v3l3-1.875v-6.75L12 4.812zm0 5.25l-3 1.875v4.5l3 1.875 3-1.875v-4.5l-3-1.875z"
+              />
+            </svg>
+            <a
+              href="mailto:karl-milann-henri.lobir@protonmail.com"
+              id="emailLinkMobile"
+              >karl-milann-henri.lobir@protonmail.com</a
+            >
+            <span
+              id="copyEmailButtonMobile"
+              style="cursor: pointer; vertical-align: middle; margin-left: 8px"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h11v16z"
+                />
+              </svg>
+            </span>
+          </p>
+        </section>
+
+        <!-- Summary -->
+        <section class="section">
+          <h2>Profile</h2>
+          <p class="tagline">
+            Fullstack engineer with <span class="metric">6+ years</span> of
+            experience building production systems across fintech, AI/SaaS, and
+            Web3. Currently
+            <span class="highlight"
+              >Tech Lead managing 8 engineers across 16 projects</span
+            >
+            at CA-GIP (Crédit Agricole Group). Previously sole engineer on an AI
+            coaching SaaS, owning the full stack from Django/LangGraph backends
+            to React/Remix frontends. Equally at ease with greenfield AI
+            architecture and large-corp delivery constraints.
+          </p>
+        </section>
+
+        <!-- Technical skills -->
+        <section class="section technical-mobile">
+          <h2>Technical Skills</h2>
+          <table class="skills-table">
+            <tbody>
+              <tr>
+                <th colspan="2">Frontend</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  React 16–19 · Remix · Next.js · TypeScript · GraphQL ·
+                  Tailwind · styled-components · LESS / SCSS · Atomic design ·
+                  Design systems · Accessibility (a11y)
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2">Backend</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  Python · Django · Node.js · NestJS · Strapi · Java EE · Spring
+                  Boot · C# / .NET · PHP
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2">AI / Data</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  LangChain · LangGraph · LLM prompting · RAG · Multi-agent
+                  architectures · OpenAI / Anthropic APIs · Vector & tag-based
+                  retrieval
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2">Data & Infra</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  PostgreSQL · MySQL · T-SQL · PL/SQL · Redis (cache + Pub/Sub)
+                  · Celery · Apigee · Nifi
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2">DevOps & Tooling</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  Docker · Kubernetes (manifests) · CI/CD pipelines · GitHub
+                  Actions · Digital Ocean · GCP (basics) · Git · SVN · Kibana ·
+                  Jest · Agile / Scrum
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2">Leadership</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  Team management (8 devs / 16 projects) · Code review culture ·
+                  Technical mentoring · Client-facing delivery · Stakeholder
+                  communication
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Experience -->
+        <section class="section">
+          <h2>Experience</h2>
+
+          <div class="job">
+            <p class="job-title">Tech Lead — KLx / CA-GIP</p>
+            <p class="job-subtitle">
+              NestJS · WeWeb · Power Apps ·
+              <span class="job-period"
+                >Nov 2025 — Present · Lisbon (remote)</span
+              >
+            </p>
+            <ul>
+              <li>
+                <p>
+                  Lead a team of
+                  <span class="metric">8 engineers</span> delivering
+                  <span class="metric">16 concurrent projects</span> in a
+                  heavily regulated banking environment (Crédit Agricole Group).
+                </p>
+              </li>
+              <li>
+                <p>
+                  Established the engineering baseline from scratch: code review
+                  workflow, branching conventions, documentation standards, and
+                  onboarding playbook — none existed before.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Built an
+                  <span class="highlight">internal roadmap-tracking tool</span>
+                  that pulls Jira tickets per project and renders the actual
+                  delivery flow as <code>Mermaid</code> diagrams — letting PMs
+                  visually compare the real progression against the planned
+                  roadmap and detect slippage early.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Co-designing an
+                  <span class="highlight"
+                    >accessibility-first design system</span
+                  >
+                  with our designers, and authoring the matching coding norms so
+                  every team enforces a11y rules by default rather than as an
+                  afterthought.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Continuously challenge the existing design system — pushing
+                  back on decisions that hurt consistency or maintainability —
+                  and lead the migration toward the new accessible tokens and
+                  components.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Architect <code>NestJS</code> backend services and supervise
+                  <code>WeWeb</code> + <code>Power Apps</code> frontend
+                  delivery, balancing no-code velocity with maintainability.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Work alongside the DevOps team on
+                  <code>Kubernetes</code> deployments — authoring and adjusting
+                  manifests for service rollouts in the group infrastructure.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Drive client-facing technical discussions, translating
+                  business requirements into roadmaps across multiple
+                  stakeholders simultaneously.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <p class="job-title">
+              Founding Fullstack Engineer — Luminous (luminous.coach)
+            </p>
+            <p class="job-subtitle">
+              Remix · Django · LangGraph · LLM · Strapi · MySQL ·
+              <span class="job-period">May 2024 — Feb 2026 · Remote</span>
+            </p>
+            <ul>
+              <li>
+                <p>
+                  <span class="highlight">Sole engineer</span> on an AI coaching
+                  SaaS used by B2B sales teams — built, shipped and operated the
+                  full stack alone.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Migrated legacy <code>React 16</code> +
+                  <code>Strapi</code> stack to a modern <code>Remix</code> SSR
+                  frontend with a dedicated <code>Django</code> AI backend,
+                  eliminating the previous client-side bottlenecks on chat
+                  sessions.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Designed and shipped a multi-agent
+                  <code>LangGraph</code> architecture with confidence scoring,
+                  tag-based filtering, and Redis pub/sub orchestration —
+                  powering contextualized coaching for 3 product tiers (Lite /
+                  Pro / Max).
+                </p>
+              </li>
+              <li>
+                <p>
+                  Built a custom Remix-native API layer (SSR-safe headers, CSRF,
+                  memoization, TTL/SWR caching) replacing the previous Axios/RTK
+                  Query stack — chosen over off-the-shelf libraries for full
+                  control over caching and auth flows.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Worked closely with the designer to implement the frontend
+                  around <span class="highlight">atomic design</span> with
+                  strict component isolation (each component in its own folder,
+                  logic + styled-components split) — making the codebase easy to
+                  scale solo.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Challenged product decisions toward a
+                  <span class="highlight">user-centered feature focus</span> —
+                  advocating for onboarding flows and retention hooks that
+                  prioritized casual users alongside advanced ones.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Owned the CI/CD on <code>Digital Ocean</code>: Docker-based
+                  pipelines enabling weekly production releases with
+                  zero-downtime deploys.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Built a workspace invite system using
+                  <code>Django</code> signals and <code>Celery</code> tasks for
+                  async email delivery and onboarding flows.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Continuously translated technical decisions to non-technical
+                  founders — sole bridge between business and engineering.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <p class="job-title">Frontend Engineer — Uncut (uncut.network)</p>
+            <p class="job-subtitle">
+              Next.js · GraphQL · Web3 · LESS ·
+              <span class="job-period">Jan 2023 — May 2024 · Remote</span>
+            </p>
+            <ul>
+              <li>
+                <p>
+                  Shipped weekly releases on a Web3 digital art marketplace as
+                  part of a <span class="metric">3-person frontend team</span>,
+                  supporting multiple chains (Polygon, WAX, Ethereum) and
+                  currencies (ARTX, USDC, WAXP).
+                </p>
+              </li>
+              <li>
+                <p>
+                  Led the redesign and full implementation of personalized
+                  profile pages, integrating user-specific content and social
+                  interactions.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Built the social feed (post / interact / share), curation
+                  system for power users, gamified rewards, and the Explore
+                  section with advanced filtering by blockchain, currency,
+                  creator level, and media type.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Implemented real-time notifications and optimized SSR +
+                  GraphQL caching to keep page loads fast despite media-heavy
+                  content.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Worked closely with designers to maintain pixel-perfect UI/UX
+                  and accessibility across the platform.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <p class="job-title">
+              Fullstack Developer — Mainsysgroup (banking software)
+            </p>
+            <p class="job-subtitle">
+              CFCAL client · API integration · Java · C# · VB.NET ·
+              <span class="job-period">2020 — Dec 2022 · Lille, France</span>
+            </p>
+            <ul>
+              <li>
+                <p>
+                  Built the API gateway layer (<code>Apigee</code>,
+                  <code>Nifi</code>, <code>Kibana</code>) consolidating CFCAL's
+                  data flows, including SOAP ↔ REST conversion for downstream
+                  partner APIs (notably Pumpkin).
+                </p>
+              </li>
+              <li>
+                <p>
+                  Maintained and extended the broker website + desktop app for
+                  loan creation and follow-up (<code>VB.NET</code>,
+                  <code>jQuery</code>, <code>T-SQL</code>); managed the team and
+                  day-to-day client relationship.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Delivered a
+                  <span class="metric">digital signing platform</span> for loan
+                  validation in <code>C#</code> / <code>XSP</code> /
+                  <code>T-SQL</code> — Agile delivery with team management
+                  responsibility.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Built and maintained modular <code>JSP</code> /
+                  <code>Java 12</code> / <code>PL/SQL</code> websites for
+                  multiple Mainsysgroup clients.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <p class="job-title">Earlier projects</p>
+            <p class="job-subtitle">
+              <span class="job-period">2014 — 2020</span>
+            </p>
+            <ul>
+              <li>
+                <p>
+                  <span class="highlight">Les Croisades D'Unnord</span> (2020) —
+                  Frontend + backend for an association in
+                  <code>Angular 9</code> / <code>Spring Boot</code>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="highlight">HEI 5th-year project</span> (2019) —
+                  Wikipedia-like info platform built end-to-end in Agile (<code
+                    >Angular 7</code
+                  >
+                  / <code>Spring Boot</code>).
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="highlight">Auto-entrepreneur sites</span> (2019)
+                  — Design, dev and maintenance on <code>Angular 7</code> +
+                  Firebase serverless hosting.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="highlight"
+                    >HEI Micro Association — President</span
+                  >
+                  (2015–2016) — Customer service, hardware repair, team
+                  management.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="highlight">Vallourec & Mannesmann</span> (2014) —
+                  IT Security internship: built a web ticket system and
+                  integrated SAP ERP hardware tracking.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
       </div>
 
-      <div class="job">
-        <p class="job-title">Founding Fullstack Engineer — Luminous (luminous.coach)</p>
-        <p class="job-subtitle">Remix · Django · LangGraph · LLM · Strapi · MySQL · <span class="job-period">May 2024 — Feb 2026 · Remote</span></p>
-        <ul>
-          <li><p><span class="highlight">Sole engineer</span> on an AI coaching SaaS used by B2B sales teams — built, shipped and operated the full stack alone.</p></li>
-          <li><p>Migrated legacy <code>React 16</code> + <code>Strapi</code> stack to a modern <code>Remix</code> SSR frontend with a dedicated <code>Django</code> AI backend, eliminating the previous client-side bottlenecks on chat sessions.</p></li>
-          <li><p>Designed and shipped a multi-agent <code>LangGraph</code> architecture with confidence scoring, tag-based filtering, and Redis pub/sub orchestration — powering contextualized coaching for 3 product tiers (Lite / Pro / Max).</p></li>
-          <li><p>Built a custom Remix-native API layer (SSR-safe headers, CSRF, memoization, TTL/SWR caching) replacing the previous Axios/RTK Query stack — chosen over off-the-shelf libraries for full control over caching and auth flows.</p></li>
-          <li><p>Worked closely with the designer to implement the frontend around <span class="highlight">atomic design</span> with strict component isolation (each component in its own folder, logic + styled-components split) — making the codebase easy to scale solo.</p></li>
-          <li><p>Challenged product decisions toward a <span class="highlight">user-centered feature focus</span> — advocating for onboarding flows and retention hooks that prioritized casual users alongside advanced ones.</p></li>
-          <li><p>Owned the CI/CD on <code>Digital Ocean</code>: Docker-based pipelines enabling weekly production releases with zero-downtime deploys.</p></li>
-          <li><p>Built a workspace invite system using <code>Django</code> signals and <code>Celery</code> tasks for async email delivery and onboarding flows.</p></li>
-          <li><p>Continuously translated technical decisions to non-technical founders — sole bridge between business and engineering.</p></li>
-        </ul>
+      <!-- ============ RIGHT COLUMN ============ -->
+      <div class="right-column">
+        <!-- Desktop header -->
+        <section class="section desktop-header">
+          <h1>Karl-Milann <br /><span class="highlight">LOBIR</span></h1>
+          <p class="tagline">Senior Fullstack Developer & Tech Lead</p>
+          <p style="margin-top: 8px">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="#EA4335"
+              style="vertical-align: middle; margin-right: 4px"
+            >
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+              />
+            </svg>
+            Lisbon, Portugal
+          </p>
+          <p style="opacity: 0.85; margin-top: -8px">
+            Open to fully remote roles
+          </p>
+          <a href="https://wa.me/qr/FOMDIPXDBFJQN1"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="#25D366"
+              style="vertical-align: middle; margin-right: 4px"
+            >
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+              />
+            </svg>
+            +33 6 95 84 86 07</a
+          >
+          <p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="#6D4AFF"
+              style="vertical-align: middle; margin-right: 4px"
+            >
+              <path
+                d="M0 4.688C0 2.099 2.099 0 4.688 0h14.625C21.9 0 24 2.098 24 4.688v14.625C24 21.9 21.902 24 19.312 24H4.688C2.099 24 0 21.898 0 19.312V4.688zm12 .124L4.5 8.625v6.75L7.5 13.5V10.5l4.5-2.625L16.5 10.5v3l3-1.875v-6.75L12 4.812zm0 5.25l-3 1.875v4.5l3 1.875 3-1.875v-4.5l-3-1.875z"
+              />
+            </svg>
+            <a
+              href="mailto:karl-milann-henri.lobir@protonmail.com"
+              id="emailLink"
+              >karl-milann-henri.lobir@protonmail.com</a
+            >
+            <span
+              id="copyEmailButton"
+              style="cursor: pointer; vertical-align: middle; margin-left: 8px"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="20"
+                fill="#00aaff"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h11v16z"
+                />
+              </svg>
+            </span>
+          </p>
+        </section>
+
+        <!-- Technical skills -->
+        <section class="section technical-desktop">
+          <h2>Technical Skills</h2>
+          <table class="skills-table">
+            <tbody>
+              <tr>
+                <th colspan="2">Frontend</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  React 16–19 · Remix · Next.js · TypeScript · GraphQL ·
+                  Tailwind · styled-components · LESS / SCSS · Atomic design ·
+                  Design systems · Accessibility (a11y)
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2">Backend</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  Python · Django · Node.js · NestJS · Strapi · Java EE · Spring
+                  Boot · C# / .NET · PHP
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2">AI / Data</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  LangChain · LangGraph · LLM prompting · RAG · Multi-agent
+                  architectures · OpenAI / Anthropic APIs · Vector & tag-based
+                  retrieval
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2">Data & Infra</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  PostgreSQL · MySQL · T-SQL · PL/SQL · Redis (cache + Pub/Sub)
+                  · Celery · Apigee · Nifi
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2">DevOps & Tooling</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  Docker · Kubernetes (manifests) · CI/CD pipelines · GitHub
+                  Actions · Digital Ocean · GCP (basics) · Git · SVN · Kibana ·
+                  Jest · Agile / Scrum
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2">Leadership</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  Team management (8 devs / 16 projects) · Code review culture ·
+                  Technical mentoring · Client-facing delivery · Stakeholder
+                  communication
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Languages -->
+        <section class="section">
+          <h2>Languages</h2>
+          <ul class="languages">
+            <li>🇫🇷 <span class="highlight">French</span> — Native</li>
+            <li>
+              🇬🇧 <span class="highlight">English</span> — Fluent (professional)
+            </li>
+            <li>🇪🇸 Spanish — Reading & writing</li>
+            <li>🇵🇹 Portuguese — Basics (improving)</li>
+            <li>🇨🇳 Chinese — Basics</li>
+          </ul>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+          <h2>Education</h2>
+          <p>
+            <span class="highlight">HEI — Hautes Études d'Ingénieur</span><br />
+            <span class="job-period">2014 — 2019 · Lille, France</span>
+          </p>
+          <p>
+            General Engineering · Specialisation in Computer Science &
+            Information Technology.
+          </p>
+        </section>
+
+        <!-- Interests -->
+        <section class="section">
+          <h2>Interests</h2>
+          <ul class="interests">
+            <li>
+              <span class="highlight">Martial arts</span> — Aikido (10 yrs,
+              French-speaking events) · Pencak-Silat (3 yrs)
+            </li>
+            <li>
+              <span class="highlight">Reading</span> — Fantasy & detective
+              fiction
+            </li>
+            <li>
+              <span class="highlight">Tech curiosity</span> — Quantum computing
+              · AI architectures
+            </li>
+            <li>
+              <span class="highlight">Travel</span> — Canada · USA · Côte
+              d'Ivoire · Guadeloupe
+            </li>
+          </ul>
+        </section>
       </div>
+    </div>
 
-      <div class="job">
-        <p class="job-title">Frontend Engineer — Uncut (uncut.network)</p>
-        <p class="job-subtitle">Next.js · GraphQL · Web3 · LESS · <span class="job-period">Jan 2023 — May 2024 · Remote</span></p>
-        <ul>
-          <li><p>Shipped weekly releases on a Web3 digital art marketplace as part of a <span class="metric">3-person frontend team</span>, supporting multiple chains (Polygon, WAX, Ethereum) and currencies (ARTX, USDC, WAXP).</p></li>
-          <li><p>Led the redesign and full implementation of personalized profile pages, integrating user-specific content and social interactions.</p></li>
-          <li><p>Built the social feed (post / interact / share), curation system for power users, gamified rewards, and the Explore section with advanced filtering by blockchain, currency, creator level, and media type.</p></li>
-          <li><p>Implemented real-time notifications and optimized SSR + GraphQL caching to keep page loads fast despite media-heavy content.</p></li>
-          <li><p>Worked closely with designers to maintain pixel-perfect UI/UX and accessibility across the platform.</p></li>
-        </ul>
-      </div>
+    <script>
+      // Theme: respect system preference, toggle overrides it
+      const switchInput = document.getElementById("switchInput");
 
-      <div class="job">
-        <p class="job-title">Fullstack Developer — Mainsysgroup (banking software)</p>
-        <p class="job-subtitle">CFCAL client · API integration · Java · C# · VB.NET · <span class="job-period">2020 — Dec 2022 · Lille, France</span></p>
-        <ul>
-          <li><p>Built the API gateway layer (<code>Apigee</code>, <code>Nifi</code>, <code>Kibana</code>) consolidating CFCAL's data flows, including SOAP ↔ REST conversion for downstream partner APIs (notably Pumpkin).</p></li>
-          <li><p>Maintained and extended the broker website + desktop app for loan creation and follow-up (<code>VB.NET</code>, <code>jQuery</code>, <code>T-SQL</code>); managed the team and day-to-day client relationship.</p></li>
-          <li><p>Delivered a <span class="metric">digital signing platform</span> for loan validation in <code>C#</code> / <code>XSP</code> / <code>T-SQL</code> — Agile delivery with team management responsibility.</p></li>
-          <li><p>Built and maintained modular <code>JSP</code> / <code>Java 12</code> / <code>PL/SQL</code> websites for multiple Mainsysgroup clients.</p></li>
-        </ul>
-      </div>
+      function updateTheme() {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        const isDark = switchInput.checked ? false : prefersDark;
+        document.body.className = isDark ? "dark" : "light";
+      }
 
-      <div class="job">
-        <p class="job-title">Earlier projects</p>
-        <p class="job-subtitle"><span class="job-period">2014 — 2020</span></p>
-        <ul>
-          <li><p><span class="highlight">Les Croisades D'Unnord</span> (2020) — Frontend + backend for an association in <code>Angular 9</code> / <code>Spring Boot</code>.</p></li>
-          <li><p><span class="highlight">HEI 5th-year project</span> (2019) — Wikipedia-like info platform built end-to-end in Agile (<code>Angular 7</code> / <code>Spring Boot</code>).</p></li>
-          <li><p><span class="highlight">Auto-entrepreneur sites</span> (2019) — Design, dev and maintenance on <code>Angular 7</code> + Firebase serverless hosting.</p></li>
-          <li><p><span class="highlight">HEI Micro Association — President</span> (2015–2016) — Customer service, hardware repair, team management.</p></li>
-          <li><p><span class="highlight">Vallourec & Mannesmann</span> (2014) — IT Security internship: built a web ticket system and integrated SAP ERP hardware tracking.</p></li>
-        </ul>
-      </div>
-    </section>
-  </div>
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", updateTheme);
+      switchInput.addEventListener("change", updateTheme);
+      updateTheme();
+    </script>
 
-  <!-- ============ RIGHT COLUMN ============ -->
-  <div class="right-column">
-
-    <!-- Desktop header -->
-    <section class="section desktop-header">
-      <h1>Karl-Milann <br><span class="highlight">LOBIR</span></h1>
-      <p class="tagline">Senior Fullstack Developer & Tech Lead</p>
-      <p style="margin-top:8px;">📍 Lisbon, Portugal</p>
-      <p style="opacity:0.85; margin-top:-8px;">Open to fully remote roles</p>
-      <a href="https://wa.me/qr/FOMDIPXDBFJQN1">📞 +33 6 95 84 86 07</a>
-      <p>✉️ <a href="mailto:karl-milann-henri.lobir@protonmail.com" id="emailLink">karl-milann-henri.lobir@protonmail.com</a>
-        <span id="copyEmailButton" style="cursor:pointer; vertical-align:middle; margin-left:8px;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="#00aaff" viewBox="0 0 24 24">
-            <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h11v16z"/>
-          </svg>
-        </span>
-      </p>
-    </section>
-
-    <!-- Technical skills -->
-    <section class="section">
-      <h2>Technical Skills</h2>
-      <table class="skills-table">
-        <tbody>
-          <tr><th colspan="2">Frontend</th></tr>
-          <tr><td colspan="2">React 16–19 · Remix · Next.js · TypeScript · GraphQL · Tailwind · styled-components · LESS / SCSS · Atomic design · Design systems · Accessibility (a11y)</td></tr>
-          <tr><th colspan="2">Backend</th></tr>
-          <tr><td colspan="2">Python · Django · Node.js · NestJS · Strapi · Java EE · Spring Boot · C# / .NET · PHP</td></tr>
-          <tr><th colspan="2">AI / Data</th></tr>
-          <tr><td colspan="2">LangChain · LangGraph · LLM prompting · RAG · Multi-agent architectures · OpenAI / Anthropic APIs · Vector & tag-based retrieval</td></tr>
-          <tr><th colspan="2">Data & Infra</th></tr>
-          <tr><td colspan="2">PostgreSQL · MySQL · T-SQL · PL/SQL · Redis (cache + Pub/Sub) · Celery · Apigee · Nifi</td></tr>
-          <tr><th colspan="2">DevOps & Tooling</th></tr>
-          <tr><td colspan="2">Docker · Kubernetes (manifests) · CI/CD pipelines · GitHub Actions · Digital Ocean · GCP (basics) · Git · SVN · Kibana · Jest · Agile / Scrum</td></tr>
-          <tr><th colspan="2">Leadership</th></tr>
-          <tr><td colspan="2">Team management (8 devs / 16 projects) · Code review culture · Technical mentoring · Client-facing delivery · Stakeholder communication</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- Languages -->
-    <section class="section">
-      <h2>Languages</h2>
-      <ul class="languages">
-        <li>🇫🇷 <span class="highlight">French</span> — Native</li>
-        <li>🇬🇧 <span class="highlight">English</span> — Fluent (professional)</li>
-        <li>🇪🇸 Spanish — Reading & writing</li>
-        <li>🇵🇹 Portuguese — Basics (improving)</li>
-        <li>🇨🇳 Chinese — Basics</li>
-      </ul>
-    </section>
-
-    <!-- Education -->
-    <section class="section">
-      <h2>Education</h2>
-      <p><span class="highlight">HEI — Hautes Études d'Ingénieur</span><br>
-        <span class="job-period">2014 — 2019 · Lille, France</span></p>
-      <p>General Engineering · Specialisation in Computer Science & Information Technology.</p>
-    </section>
-
-    <!-- Interests -->
-    <section class="section">
-      <h2>Interests</h2>
-      <ul class="interests">
-        <li><span class="highlight">Martial arts</span> — Aikido (10 yrs, French-speaking events) · Pencak-Silat (3 yrs)</li>
-        <li><span class="highlight">Reading</span> — Fantasy & detective fiction</li>
-        <li><span class="highlight">Tech curiosity</span> — Quantum computing · AI architectures</li>
-        <li><span class="highlight">Travel</span> — Canada · USA · Côte d'Ivoire · Guadeloupe</li>
-      </ul>
-    </section>
-  </div>
-</div>
-
-<script>
-  // Theme: respect system preference, toggle overrides it
-  const switchInput = document.getElementById('switchInput');
-
-  function updateTheme() {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isDark = switchInput.checked ? false : prefersDark;
-    document.body.className = isDark ? 'dark' : 'light';
-  }
-
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
-  switchInput.addEventListener('change', updateTheme);
-  updateTheme();
-</script>
-
-<script>
-  // Email copy
-  function copyEmail() {
-    navigator.clipboard.writeText('karl-milann-henri.lobir@protonmail.com');
-    const toast = document.getElementById('toast');
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 1800);
-  }
-  const copyBtn = document.getElementById('copyEmailButton');
-  const copyBtnMobile = document.getElementById('copyEmailButtonMobile');
-  if (copyBtn) copyBtn.addEventListener('click', copyEmail);
-  if (copyBtnMobile) copyBtnMobile.addEventListener('click', copyEmail);
-</script>
-
-</body>
+    <script>
+      // Email copy
+      function copyEmail() {
+        navigator.clipboard.writeText("karl-milann-henri.lobir@protonmail.com");
+        const toast = document.getElementById("toast");
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 1800);
+      }
+      const copyBtn = document.getElementById("copyEmailButton");
+      const copyBtnMobile = document.getElementById("copyEmailButtonMobile");
+      if (copyBtn) copyBtn.addEventListener("click", copyEmail);
+      if (copyBtnMobile) copyBtnMobile.addEventListener("click", copyEmail);
+    </script>
+  </body>
 </html>
